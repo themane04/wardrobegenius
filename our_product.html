@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Our Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@500&display=swap"
+          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header class="header">
+    <div class="header__logo slide-in-element" id="logo">
+        <img src="/fotos/logo.png" alt="background in the header with the text on top">
+    </div>
+    <nav class="header__menu menu">
+        <a class="menu__item slide-in-element" href="home.html">Home</a>
+        <a class="menu__item slide-in-element active" href="our_product.html">Our Product</a>
+        <a class="menu__item slide-in-element" href="contact.html">Contact</a>
+    </nav>
+    <p class="header__text slide-in-element"><b>"Your personal style consultant, right in your closet."</b></p>
+
+    <div class="header_icons slide-in-element">
+        <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
+            <img src="/fotos/fb.webp" alt="facebook logo icon">
+        </a>
+        <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
+           target="_blank" rel="noopener noreferrer">
+            <img src="fotos/ig.webp" alt="instagram logo icon">
+        </a>
+        <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
+            <img src="fotos/twitter.webp" alt="twitter logo icon">
+        </a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+            <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+        </a>
+    </div>
+</header>
+<body class="page2">
+
+<div class="image-container">
+    <div class="clothes2">
+        <img src="fotos/clothes2.jpg" alt="clothes with similiar colors hanging in a store">
+    </div>
+    <div class="phone slide-in-element">
+        <img src="fotos/iphone.png" alt="white iphone with the logo inside">
+    </div>
+</div>
+
+<div class="photo__text2">
+    <h4 class="title2 slide-in-element">WardrobeGenius</h4>
+    <p class="par slide-in-element">WardrobeGenius is more than just an app; it's your personal style assistant that
+        provides outfit
+        ideas based on
+        the
+        clothing you already have in your closet. Using artificial intelligence, the app learns your unique style and
+        suggests outfits tailored to you. Discover a new world of fashion with WardrobeGenius and always look your best
+        without the headache. Say goodbye to the stress of choosing outfits and embrace a streamlined, fashionable
+        lifestyle
+        with WardrobeGenius.</p>
+</div>
+
+<div class="image-container2">
+    <div class="woman zoomable-image">
+        <img src="fotos/woman.jpg" alt="woman protecting her face from the sun with her hands">
+    </div>
+    <div class="photo__text3">
+        <h3 class="title3 slide-in-element">Key Features</h3>
+        <p class="slide-in-element" id="p1"><b>Closet Scanner:</b> A feature that allows you to take photos of your clothing items, which are
+            then
+            automatically
+            categorized.</p>
+        <p class="slide-in-element2" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or forecasted weather conditions.
+        </p>
+        <p class="slide-in-element" id="p3"><b>Social Sharing:</b> The ability to share outfits or seek feedback from friends within the app.</p>
+        <p class="slide-in-element2" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or accessories that fit your
+            style,
+            complete with
+            links to online stores.</p>
+        <p class="slide-in-element" id="p5"><b>Event-specific Outfits:</b> Outfit suggestions for special occasions such as parties, business
+            meetings, or
+            sporting
+            events.</p>
+        <p class="slide-in-element2" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to try out new style
+            combinations.</p>
+        <p class="slide-in-element" id="p7"><b>Lookbook:</b> A section where you can save your favorite outfits for easy access later on.</p>
+        <p class="slide-in-element2" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your selected outfits are, based on
+            material,
+            manufacturing process, etc.</p>
+        <p class="slide-in-element" id="p9"><b>Analytics and Trends:</b> An overview of your most-worn outfits, colors, and brands to better
+            understand your
+            fashion
+            trends.</p>
+    </div>
+</div>
+
+
+<div style="color: transparent; height: 40px"></div>
+
+<script>
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const shrinkablePhoto = document.querySelector('.clothes2');
+        const initialTopPosition = shrinkablePhoto.getBoundingClientRect().top + window.pageYOffset;
+
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.scrollY;
+
+            if (scrollPosition >= initialTopPosition) {
+                const relativeScroll = scrollPosition - initialTopPosition;
+                const scaleValue = Math.max(0.7, 1.01 - relativeScroll / 1000); // Adjust the scale as needed, minimum is 0.7
+                const opacityValue = Math.max(0.2, 1 - relativeScroll / 2000);  // Adjust the fade effect as needed
+
+                shrinkablePhoto.style.transform = `scale(${scaleValue})`;
+                shrinkablePhoto.style.opacity = opacityValue;
+            }
+        });
+    });
+
+
+    // Grab the image element
+    const imgElement = document.querySelector('.zoomable-image');
+
+    // Listen for scroll events
+    window.addEventListener('scroll', function () {
+        // Calculate scroll position as a percentage of the page height
+        let scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+
+        // Adjust the scale factor to be less intense (here, I halved the added scale)
+        let scale = 1 + (scrollPercent / 100 * 0.5);
+
+        // Round the scale to two decimal places
+        scale = Math.round(scale * 100) / 100;
+
+        // Apply the scale transformation
+        imgElement.style.transform = `scale(${scale})`;
+
+        // Reset transform when user scrolls back up
+        if (scrollPercent < 1) {
+            imgElement.style.transform = 'scale(1)';
+        }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var slideInElements = document.querySelectorAll('.slide-in-element');
+
+        function checkPosition() {
+            for (var i = 0; i < slideInElements.length; i++) {
+                var element = slideInElements[i];
+                var positionFromTop = element.getBoundingClientRect().top;
+
+                if (window.innerHeight - positionFromTop > 0) {
+                    element.classList.add('reveal-item');
+                }
+            }
+        }
+
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', checkPosition);
+        window.addEventListener('load', checkPosition);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var slideInElements = document.querySelectorAll('.slide-in-element2');  // Updated class name
+
+        function checkPosition() {
+            for (var i = 0; i < slideInElements.length; i++) {
+                var element = slideInElements[i];
+                var positionFromTop = element.getBoundingClientRect().top;
+
+                if (window.innerHeight - positionFromTop > 0) {
+                    element.classList.add('reveal-item-right-to-left');  // Updated class name
+                }
+            }
+        }
+
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', checkPosition);
+        window.addEventListener('load', checkPosition);
+    });
+
+
+
+
+</script>
+<footer class="footer">
+</footer>
+</body>
+</html>

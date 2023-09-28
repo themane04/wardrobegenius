@@ -1,0 +1,559 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Handle (or thumb) of the scrollbar */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.7);  /* Almost black, slightly transparent */
+    border-radius: 4px;
+}
+
+/* Add a background color to the scrollbar track */
+::-webkit-scrollbar-track {
+    background: rgba(128, 128, 128, 0.3);  /* Light gray with transparency */
+    border-radius: 4px;  /* Rounded corners to match the thumb */
+}
+
+/* Optional: Style for hover state of the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.9);  /* A bit darker when hovering */
+}
+
+.page1 {
+    background-color: #FFC37B;
+    overflow: auto;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-element {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.reveal-item {
+    animation: slideIn 2s forwards;
+}
+
+
+@font-face {
+    font-family: "MeineSchriftart";
+    src: url("fonts/SuezOne-Regular.ttf");
+}
+
+.header {
+    font-family: SuezOne, sans-serif;
+    visibility: inherit;
+    width: 100%;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #DBB89A;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+.header__menu {
+    display: flex;
+    gap: 8px;
+    margin-left: -550px;
+    margin-top: 40px;
+}
+
+.menu__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 10px 10px;
+    color: black; /* Set the text color to black */
+    z-index: 1; /* Make sure the text stays above the background shape */
+}
+
+.menu__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 39.2px;
+    width: 100%;
+    background-color: #FFC37B; /* Background shape color */
+    border-radius: 50px; /* Rounded corners */
+    z-index: -1;
+}
+
+.menu__item:hover::before {
+    background-color: white;
+}
+
+.header__logo {
+    position: absolute; /* Take this out of the normal flow */
+    top: 30px; /* Adjust these as needed */
+    left: 950px; /* Adjust these as needed */
+    margin-top: -10px;
+}
+
+.active::before {
+    background-color: white;
+}
+
+.header__logo img {
+    width: 170px;
+    height: 170px;
+}
+
+.header__text {
+    color: black;
+    position: absolute; /* Takes it out of the normal flow */
+    top: 30px; /* Distance from the top of the header */
+    left: 350px; /* Distance from the left of the header */
+    font-style: italic;
+    font-family: SuezOne, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+}
+
+.header_icons {
+    position: absolute;
+    top: 80px;
+    left: 1270px;
+    display: flex;
+    gap: 10px;
+}
+
+.page__text {
+    font-family: "Oswald m os", sans-serif;
+    letter-spacing: 0;
+    background-color: #FFC37B;
+    margin: auto; /* Centers the block */
+    padding: 20px;
+    color: white;
+    text-align: center;
+    height: 430px;
+}
+
+.page__text h1 {
+    letter-spacing: normal;
+    font-size: 56px;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.page__text h6 {
+    vertical-align: baseline;
+    font-size: 20px;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.page__text p {
+    line-height: 1.6em;
+    letter-spacing: normal;
+    font-size: 18px;
+    margin: auto;
+    padding-top: 30px;
+    width: 629px;
+    height: 97.2px
+}
+
+.photo {
+    position: relative;
+    width: 100%; /* or whatever size you want */
+    height: 636px; /* or whatever size you want */
+    overflow: hidden; /* so that any zoom won't overflow */
+}
+
+.photo img {
+    width: 100%;
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+.photo__text {
+    font-family: "Oswald m os", sans-serif;
+    position: absolute;
+    font-weight: 400;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: #fff; /* White text */
+    width: 631.78px;
+    height: 216px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+                                                                        /* FIRST PAGE/HEADER/SCROLLBAR */
+
+@keyframes slideInRightToLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(100px); /* Positive value for sliding in from the right */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-in-element2 {
+    opacity: 0;
+    transform: translateX(100px); /* Starting position */
+}
+
+.reveal-item-right-to-left {
+    animation: slideInRightToLeft 2s forwards;
+}
+
+
+.page2 {
+    background-color: rgb(218, 184, 125, 1);
+}
+
+.title {
+    font-family: "Oswald m os", sans-serif;
+    font-size: 38px;
+}
+
+
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.clothes2 img {
+    width: 100%;
+}
+
+.clothes2.shrinkable-photo {
+    transition: transform 0.3s ease;
+    transform: scale(1); /* Start at original size */
+    transform-origin: center center; /* Make sure the image scales from the center */
+}
+
+.phone {
+    position: absolute;
+    top: 20%;
+    left: 865px;
+    z-index: 1;
+}
+
+.photo__text2 {
+    font-family: "Oswald m os", sans-serif;
+    position: absolute;
+    font-weight: 400;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: #fff; /* White text */
+    width: 631.78px;
+    height: 216px;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.title2 {
+    padding-top: 250px;
+    font-size: 38px;
+    text-align: left;
+}
+
+.par {
+    width: 416.43px;
+    height: 355.2px;
+    padding-top: 50px;
+    text-align: left;
+    font-size: 22px;
+    line-height: normal;
+    vertical-align: baseline;
+    letter-spacing: normal;
+}
+
+.image-container2 {
+    overflow: hidden; /* hides the overflow */
+}
+
+.woman img {
+    width: 100%;
+    height: 1193px;
+}
+
+.zoomable-image {
+    transition: transform 0.5s ease;
+    transform: scale(1.01); /* Start slightly larger */
+    backface-visibility: hidden;
+    filter: sepia(3%) saturate(120%) contrast(1) brightness(80%);
+}
+
+.photo__text3 {
+    font-family: "Oswald m os", sans-serif;
+    position: absolute;
+    font-weight: 400;
+    top: 195%;
+    left: 40%;
+    transform: translate(-50%, -50%); /* Center the text */
+    color: #fff; /* White text */
+    width: 632px;
+    height: 216px;
+    text-align: center;
+    padding-bottom: 100px;
+
+}
+
+.title3 {
+    margin-left: 300px;
+    width: 400px;
+    color: white;
+    font-size: 54px;
+    transform: translate(-50%, -50%); /* Center the text */
+}
+
+#p1, #p3, #p5, #p7, #p9 {
+    margin-top: 5px;
+    width: 450px;
+    height: 92.4px;
+    text-align: left;
+    font-size: 22px;
+    margin-right: 800px;
+}
+
+#p1 {
+    margin-top: 70px;
+}
+
+#p2, #p4, #p6, #p8 {
+    margin-top: 5px;
+    padding-bottom: 5px;
+    width: 450px;
+    height: 92.4px;
+    text-align: left;
+    font-size: 22px;
+    margin-left: 550px;
+
+}
+
+.footer {
+    text-align: center;
+    width: 100%;
+    height: 147px;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
+    z-index: 1000; /* Set a high z-index */
+    position: relative; /* z-index only works on positioned elements */
+    background-color: #ffc37b;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+
+                                                                /* THIRD PAGE */
+
+
+.page3 {
+    background-color: rgb(253, 193, 122, 1);
+}
+
+.contact {
+    font-family: "Oswald m os",sans-serif;
+    text-align: center;
+    color: white;
+}
+
+.title4 {
+    margin-top: 150px;
+    font-size: 56px;
+}
+
+.par2 {
+    margin-top: 35px;
+    font-size: 18px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 100%;
+    height: 710px;
+    padding-top: 50px;
+}
+
+.contact-form {
+    background-color: rgb(210, 128, 54);
+
+}
+
+.contact-image {
+    flex: 1;
+    background-image: url('fotos/');  /* Update with your image path */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 710px;  /* Or whatever height you prefer */
+}
+
+.contact-image img {
+    position: fixed;  /* Keeps the image fixed on the page */
+    top: 0;  /* Aligns the image to the top */
+    left: 0;  /* Aligns the image to the left */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;  /* Places the image below the form and other content */
+}
+
+.contact-form {
+    flex: 0.9;
+    padding: 20px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    font-size: 17px;
+    color: white;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-bottom-width: 2px; /* Thicker bottom border when focused */
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+    border-bottom-width: 2px; /* Thicker bottom border when focused */
+}
+
+.name-fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.single-field {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.single-field label {
+    display: block;
+    margin-bottom: 5px;  /* Adjust as needed */
+    font-size: 14px;  /* Adjust as needed */
+    color: #FFF;  /* Adjust as needed */
+}
+
+.single-field input[type="text"] {
+    width: 100%;
+    /* Your existing styles */
+}
+
+.name-fields .single-field:last-child {
+    margin-right: 0;
+}
+
+/* For the first and last name fields */
+#first_name,
+#last_name {
+    width: 200px;
+    height: 37px;
+}
+
+.last-name {
+    margin-left: -155px;
+}
+
+/* For the email field */
+input[type="email"] {
+    width: 438px;
+    height: 37px;
+}
+
+input[type="email"]:invalid {
+    border-bottom: 2px solid red;
+}
+
+
+/* For the message field */
+textarea {
+    width: 438px;
+    height: 67px;
+    resize: none;
+}
+
+button {
+    cursor: pointer;
+    background-color: #FFC37B;
+    color: black;
+    width: 140px;
+    height: 36px;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.contact-form {
+    font-family: "Oswald m os",sans-serif;
+    padding-top: 190px;
+    padding-left: 140px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

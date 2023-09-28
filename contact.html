@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="de-CH">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@500&display=swap"
+          rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<header class="header">
+    <div class="header__logo slide-in-element" id="logo">
+        <img src="/fotos/logo.png" alt="background in the header with the text on top">
+    </div>
+    <nav class="header__menu menu">
+        <a class="menu__item slide-in-element" href="home.html">Home</a>
+        <a class="menu__item slide-in-element" href="our_product.html">Our Product</a>
+        <a class="menu__item slide-in-element active" href="contact.html">Contact</a>
+    </nav>
+    <p class="header__text slide-in-element"><b>"Your personal style consultant, right in your closet."</b></p>
+
+    <div class="header_icons slide-in-element">
+        <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
+            <img src="/fotos/fb.webp" alt="facebook logo icon">
+        </a>
+        <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
+           target="_blank" rel="noopener noreferrer">
+            <img src="fotos/ig.webp" alt="instagram logo icon">
+        </a>
+        <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
+            <img src="fotos/twitter.webp" alt="twitter logo icon">
+        </a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+            <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+        </a>
+    </div>
+</header>
+<body class="page3">
+<div class="contact slide-in-element">
+    <h1 class="title4">Contact Us</h1>
+    <p class="par2">Interested in WardrobeGenius or just have a question? Don't hesitate to reach out to us!</p>
+</div>
+
+<div class="contact-container">
+    <div class="contact-image"></div>
+    <div class="contact-form">
+        <form class="slide-in-element" action="#">
+            <div class="name-fields">
+                <div class="single-field">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name">
+                </div>
+                <div class="single-field last-name">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name">
+                </div>
+            </div>
+            <div class="single-field">
+                <label for="email">Email*</label>
+                <input type="email" id="email">
+            </div>
+            <div class="single-field">
+                <label for="message">Your Message</label>
+                <textarea id="message"></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const emailInput = document.querySelector('input[type="email"]');
+
+        emailInput.addEventListener("blur", function () {
+            if (!this.validity.valid || this.value === "") {
+                this.classList.add("invalid");
+            } else {
+                this.classList.remove("invalid");
+            }
+        });
+    });
+
+    document.addEventListener("scroll", function() {
+        const scrollPosition = window.scrollY;
+        const image3D = document.querySelector(".image-3D");
+        const rotation = `rotateX(${scrollPosition * 0.05}deg)`;
+        image3D.style.transform = rotation;
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var slideInElements = document.querySelectorAll('.slide-in-element');
+
+        function checkPosition() {
+            for (var i = 0; i < slideInElements.length; i++) {
+                var element = slideInElements[i];
+                var positionFromTop = element.getBoundingClientRect().top;
+
+                // Use an offset value to reveal the form when it's further into the viewport
+                // 150 is an arbitrary number; you can adjust it as needed
+                if (window.innerHeight - positionFromTop > 50) {
+                    element.classList.add('reveal-item');
+                }
+            }
+        }
+
+
+        window.addEventListener('scroll', checkPosition);
+        window.addEventListener('resize', checkPosition);
+        window.addEventListener('load', checkPosition);
+    });
+
+
+</script>
+
+
+<!--<footer class="footer"></footer>-->
+</body>
+</html>
