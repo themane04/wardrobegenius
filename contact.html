@@ -47,7 +47,9 @@
 </div>
 
 <div class="contact-container">
-    <div class="contact-image"></div>
+    <div class="contact-image">
+        <img src="fotos/clothes3.jpg" alt="Description">
+    </div>
     <div class="contact-form">
         <form class="slide-in-element" action="#">
             <div class="name-fields">
@@ -76,8 +78,8 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
+        // Email Validation
         const emailInput = document.querySelector('input[type="email"]');
-
         emailInput.addEventListener("blur", function () {
             if (!this.validity.valid || this.value === "") {
                 this.classList.add("invalid");
@@ -85,16 +87,17 @@
                 this.classList.remove("invalid");
             }
         });
-    });
 
-    document.addEventListener("scroll", function() {
-        const scrollPosition = window.scrollY;
-        const image3D = document.querySelector(".image-3D");
-        const rotation = `rotateX(${scrollPosition * 0.05}deg)`;
-        image3D.style.transform = rotation;
-    });
+        // 3D Effect on Scroll for .contact-image
+        document.addEventListener("scroll", function () {
+            const scrollPosition = window.scrollY;
+            const image3D = document.querySelector(".contact-image img");
+            const rotation = `rotateX(${scrollPosition * 0.05}deg) scale(1.1)`; // Added scale(1.1)
+            image3D.style.transform = rotation;
+        });
 
-    document.addEventListener("DOMContentLoaded", function () {
+
+        // Slide-in Animation
         var slideInElements = document.querySelectorAll('.slide-in-element');
 
         function checkPosition() {
@@ -102,14 +105,11 @@
                 var element = slideInElements[i];
                 var positionFromTop = element.getBoundingClientRect().top;
 
-                // Use an offset value to reveal the form when it's further into the viewport
-                // 150 is an arbitrary number; you can adjust it as needed
-                if (window.innerHeight - positionFromTop > 50) {
+                if (window.innerHeight - positionFromTop > 0) {
                     element.classList.add('reveal-item');
                 }
             }
         }
-
 
         window.addEventListener('scroll', checkPosition);
         window.addEventListener('resize', checkPosition);
@@ -119,7 +119,8 @@
 
 </script>
 
+<div style="color: transparent; height: 40px"></div>
 
-<!--<footer class="footer"></footer>-->
+<footer class="footer"></footer>
 </body>
 </html>
