@@ -70,28 +70,37 @@
     </div>
     <div class="photo__text3">
         <h3 class="title3 slide-in-element">Key Features</h3>
-        <p class="slide-in-element" id="p1"><b>Closet Scanner:</b> A feature that allows you to take photos of your clothing items, which are
+        <p class="slide-in-element" id="p1"><b>Closet Scanner:</b> A feature that allows you to take photos of your
+            clothing items, which are
             then
             automatically
             categorized.</p>
-        <p class="slide-in-element2" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or forecasted weather conditions.
+        <p class="slide-in-element2" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or
+            forecasted weather conditions.
         </p>
-        <p class="slide-in-element" id="p3"><b>Social Sharing:</b> The ability to share outfits or seek feedback from friends within the app.</p>
-        <p class="slide-in-element2" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or accessories that fit your
+        <p class="slide-in-element" id="p3"><b>Social Sharing:</b> The ability to share outfits or seek feedback from
+            friends within the app.</p>
+        <p class="slide-in-element2" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or
+            accessories that fit your
             style,
             complete with
             links to online stores.</p>
-        <p class="slide-in-element" id="p5"><b>Event-specific Outfits:</b> Outfit suggestions for special occasions such as parties, business
+        <p class="slide-in-element" id="p5"><b>Event-specific Outfits:</b> Outfit suggestions for special occasions such
+            as parties, business
             meetings, or
             sporting
             events.</p>
-        <p class="slide-in-element2" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to try out new style
+        <p class="slide-in-element2" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to
+            try out new style
             combinations.</p>
-        <p class="slide-in-element" id="p7"><b>Lookbook:</b> A section where you can save your favorite outfits for easy access later on.</p>
-        <p class="slide-in-element2" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your selected outfits are, based on
+        <p class="slide-in-element" id="p7"><b>Lookbook:</b> A section where you can save your favorite outfits for easy
+            access later on.</p>
+        <p class="slide-in-element2" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your
+            selected outfits are, based on
             material,
             manufacturing process, etc.</p>
-        <p class="slide-in-element" id="p9"><b>Analytics and Trends:</b> An overview of your most-worn outfits, colors, and brands to better
+        <p class="slide-in-element" id="p9"><b>Analytics and Trends:</b> An overview of your most-worn outfits, colors,
+            and brands to better
             understand your
             fashion
             trends.</p>
@@ -102,10 +111,8 @@
 <div style="color: transparent; height: 40px"></div>
 
 <script>
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
 
+    // The clothes image that shrinks
     document.addEventListener('DOMContentLoaded', function () {
         const shrinkablePhoto = document.querySelector('.clothes2');
         const initialTopPosition = shrinkablePhoto.getBoundingClientRect().top + window.pageYOffset;
@@ -115,16 +122,22 @@
 
             if (scrollPosition >= initialTopPosition) {
                 const relativeScroll = scrollPosition - initialTopPosition;
-                const scaleValue = Math.max(0.7, 1.01 - relativeScroll / 1000); // Adjust the scale as needed, minimum is 0.7
-                const opacityValue = Math.max(0.2, 1 - relativeScroll / 2000);  // Adjust the fade effect as needed
+                const scaleValue = Math.max(0.7, 1.01 - relativeScroll / 1000);
+                const opacityValue = Math.max(0.2, 1 - relativeScroll / 2000);
 
                 shrinkablePhoto.style.transform = `scale(${scaleValue})`;
                 shrinkablePhoto.style.opacity = opacityValue;
             }
+            if (scrollPosition >= initialTopPosition) {
+                // your existing scaling code here
+            } else {
+                shrinkablePhoto.style.transform = 'scale(1)';
+                shrinkablePhoto.style.opacity = 1;
+            }
         });
     });
 
-
+    // Second image on the page that zooms in whilst scrolling
     // Grab the image element
     const imgElement = document.querySelector('.zoomable-image');
 
@@ -148,6 +161,7 @@
         }
     });
 
+    // The slide in animation for all elements on the page
     document.addEventListener("DOMContentLoaded", function () {
         var slideInElements = document.querySelectorAll('.slide-in-element');
 
@@ -167,6 +181,7 @@
         window.addEventListener('load', checkPosition);
     });
 
+    // The second slide in animation for right to left for some of the text on the "woman.jpg" image
     document.addEventListener("DOMContentLoaded", function () {
         var slideInElements = document.querySelectorAll('.slide-in-element2');  // Updated class name
 
@@ -185,10 +200,6 @@
         window.addEventListener('resize', checkPosition);
         window.addEventListener('load', checkPosition);
     });
-
-
-
-
 </script>
 <footer class="footer">
 </footer>
