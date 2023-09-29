@@ -205,7 +205,9 @@
     padding-bottom: 100px;
 }
 
-                                                                        /* FIRST PAGE/HEADER/SCROLLBAR */
+
+/* FIRST PAGE/HEADER/SCROLLBAR */
+
 
 @keyframes slideInRightToLeft {
     0% {
@@ -367,7 +369,7 @@
 }
 
 
-                                                                /* THIRD PAGE */
+/* THIRD PAGE */
 
 
 .page3 {
@@ -415,6 +417,7 @@ body, html {
     background-attachment: fixed;
     background-position: center;
     height: 710px;
+    overflow: hidden;
 }
 
 .contact-image img {
@@ -493,7 +496,7 @@ textarea:hover {
 }
 
 .last-name {
-    margin-left: -155px;
+    margin-left: -190px;
 }
 
 /* For the email field */
@@ -534,25 +537,3 @@ button:hover {
     padding-top: 190px;
     padding-left: 140px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
