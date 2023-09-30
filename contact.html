@@ -14,6 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
+    <!-- Hamburger Menu Icon -->
+    <div id="menu-toggle" class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <!-- Full-Screen Overlay Menu -->
+    <div id="menu-overlay" class="overlay">
+        <button id="close-button">X</button>
+        <a href="home.html" class="menu-item">Home</a>
+        <a href="our_product.html" class="menu-item">Our Product</a>
+        <a href="contact.html" class="menu-item menu-item--active">Contact</a>
+    </div>
+
     <div class="header__logo slide-in-element" id="logo">
         <img src="/fotos/logo.png" alt="background in the header with the text on top">
     </div>
@@ -67,16 +81,20 @@
                 <input type="email" id="email">
             </div>
             <div class="single-field">
-                <label for="message">Your Message</label>
+                <label for="message">Message</label>
                 <textarea id="message"></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <button type="submit">Send</button>
         </form>
     </div>
 </div>
 
 
 <script>
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
+
     document.addEventListener("DOMContentLoaded", function () {
         // Email Validation
         const emailInput = document.querySelector('input[type="email"]');
@@ -88,12 +106,16 @@
             }
         });
 
-        // 3D Effect on Scroll for .contact-image
+        // Pull-Back on Scroll for .contact-image
         document.addEventListener("scroll", function () {
             const scrollPosition = window.scrollY;
             const image3D = document.querySelector(".contact-image img");
-            const rotation = `rotateX(${scrollPosition * 0.05}deg) scale(1.1)`; // Added scale(1.1)
-            image3D.style.transform = rotation;
+
+            // Calculate a scale factor based on the scroll position.
+            const scale = 1 + (scrollPosition / 3000);
+
+            // Apply the scale transformation.
+            image3D.style.transform = `scale(${scale})`;
         });
 
 
@@ -116,11 +138,27 @@
         window.addEventListener('load', checkPosition);
     });
 
+    // Burger menu mobile
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get menu toggle button and menu overlay
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuOverlay = document.getElementById("menu-overlay");
 
+        // Toggle menu overlay
+        menuToggle.addEventListener("click", function() {
+            if (menuOverlay.style.visibility === "visible") {
+                menuOverlay.style.visibility = "hidden";
+                menuOverlay.style.opacity = 0;
+            } else {
+                menuOverlay.style.visibility = "visible";
+                menuOverlay.style.opacity = 1;
+            }
+        });
+    });
 </script>
-
 <div style="color: transparent; height: 40px"></div>
-
-<footer class="footer"></footer>
+<footer class="footer">
+    <p>© 2023 WardrobeGenius</p>
+</footer>
 </body>
 </html>
