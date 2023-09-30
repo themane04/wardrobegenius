@@ -14,6 +14,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
+    <!-- Hamburger Menu Icon -->
+    <div id="menu-toggle" class="menu-icon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <!-- Full-Screen Overlay Menu -->
+    <div id="menu-overlay" class="overlay">
+        <button id="close-button">X</button>
+        <a href="home.html" class="menu-item">Home</a>
+        <a href="our_product.html" class="menu-item menu-item--active">Our Product</a>
+        <a href="contact.html" class="menu-item">Contact</a>
+    </div>
+
     <div class="header__logo slide-in-element" id="logo">
         <img src="/fotos/logo.png" alt="background in the header with the text on top">
     </div>
@@ -47,7 +61,7 @@
         <img src="fotos/clothes2.jpg" alt="clothes with similiar colors hanging in a store">
     </div>
     <div class="phone slide-in-element">
-        <img src="fotos/iphone.png" alt="white iphone with the logo inside">
+        <img style="border-radius: 48px" src="fotos/iphone.png" alt="white iphone with the logo inside">
     </div>
 </div>
 
@@ -63,6 +77,8 @@
         lifestyle
         with WardrobeGenius.</p>
 </div>
+
+<div style="color: transparent; height: 40px"></div>
 
 <div class="image-container2">
     <div class="woman zoomable-image">
@@ -111,6 +127,9 @@
 <div style="color: transparent; height: 40px"></div>
 
 <script>
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
 
     // The clothes image that shrinks
     document.addEventListener('DOMContentLoaded', function () {
@@ -127,9 +146,6 @@
 
                 shrinkablePhoto.style.transform = `scale(${scaleValue})`;
                 shrinkablePhoto.style.opacity = opacityValue;
-            }
-            if (scrollPosition >= initialTopPosition) {
-                // your existing scaling code here
             } else {
                 shrinkablePhoto.style.transform = 'scale(1)';
                 shrinkablePhoto.style.opacity = 1;
@@ -200,8 +216,27 @@
         window.addEventListener('resize', checkPosition);
         window.addEventListener('load', checkPosition);
     });
+
+    // Burger menu mobile
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get menu toggle button and menu overlay
+        const menuToggle = document.getElementById("menu-toggle");
+        const menuOverlay = document.getElementById("menu-overlay");
+
+        // Toggle menu overlay
+        menuToggle.addEventListener("click", function() {
+            if (menuOverlay.style.visibility === "visible") {
+                menuOverlay.style.visibility = "hidden";
+                menuOverlay.style.opacity = 0;
+            } else {
+                menuOverlay.style.visibility = "visible";
+                menuOverlay.style.opacity = 1;
+            }
+        });
+    });
 </script>
 <footer class="footer">
+    <p>© 2023 WardrobeGenius</p>
 </footer>
 </body>
 </html>
