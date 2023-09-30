@@ -72,9 +72,11 @@
 
 .header__menu {
     display: flex;
-    gap: 8px;
-    margin-left: -550px;
-    margin-top: 40px;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-left: auto;
+    margin-right: 52rem;
+    margin-top: 3rem;
 }
 
 .menu__item {
@@ -84,7 +86,7 @@
     text-decoration: none;
     font-weight: bold;
     position: relative;
-    padding: 10px 10px;
+    padding: 1rem;
     color: black; /* Set the text color to black */
     z-index: 1; /* Make sure the text stays above the background shape */
 }
@@ -96,10 +98,10 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 39.2px;
-    width: 100%;
+    height: auto;
+    width: auto;
     background-color: #FFC37B; /* Background shape color */
-    border-radius: 50px; /* Rounded corners */
+    border-radius: 20px; /* Rounded corners */
     z-index: -1;
 }
 
@@ -109,9 +111,8 @@
 
 .header__logo {
     position: absolute; /* Take this out of the normal flow */
-    top: 30px; /* Adjust these as needed */
-    left: 950px; /* Adjust these as needed */
-    margin-top: -10px;
+    top: 10%; /* Adjust these as needed */
+    left: 63%; /* Adjust these as needed */
 }
 
 .active::before {
@@ -126,21 +127,21 @@
 .header__text {
     color: black;
     position: absolute; /* Takes it out of the normal flow */
-    top: 30px; /* Distance from the top of the header */
-    left: 350px; /* Distance from the left of the header */
+    top: 10%; /* Distance from the top of the header */
+    left: 22%; /* Distance from the left of the header */
     font-style: italic;
     font-family: SuezOne, sans-serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     letter-spacing: 0.05em;
     font-weight: bold;
 }
 
 .header_icons {
     position: absolute;
-    top: 80px;
-    left: 1270px;
+    top: 40%;
+    left: 85%;
     display: flex;
-    gap: 10px;
+    gap: 8%;
 }
 
 .page__text {
@@ -148,34 +149,33 @@
     letter-spacing: 0;
     background-color: #FFC37B;
     margin: auto; /* Centers the block */
-    padding: 20px;
+    padding: 1%;
+    padding-bottom: 5%;
     color: white;
     text-align: center;
-    height: 430px;
 }
 
 .page__text h1 {
     letter-spacing: normal;
-    font-size: 56px;
+    font-size: 3.5rem;
     margin: auto;
-    padding-top: 100px;
+    padding-top: 10%;
 }
 
 .page__text h6 {
     vertical-align: baseline;
-    font-size: 20px;
+    font-size: 1.2rem;
     margin: auto;
-    padding-top: 20px;
+    padding-top: 2%;
 }
 
 .page__text p {
     line-height: 1.6em;
     letter-spacing: normal;
-    font-size: 18px;
+    font-size: 1.125rem;
     margin: auto;
-    padding-top: 30px;
-    width: 629px;
-    height: 97.2px
+    padding-top: 3%;
+    width: 40%;
 }
 
 .photo {
@@ -183,6 +183,7 @@
     width: 100%; /* or whatever size you want */
     height: 636px; /* or whatever size you want */
     overflow: hidden; /* so that any zoom won't overflow */
+    object-fit: cover;
 }
 
 .photo img {
@@ -199,14 +200,153 @@
     left: 50%;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
-    width: 631.78px;
-    height: 216px;
+    width: 50%;
+    height: 50%;
     text-align: center;
-    padding-bottom: 100px;
+}
+
+/* Media Query for Larger Screens (bigger than 1080p) */
+@media screen and (min-width: 1921px) {
+
+    .header__menu {
+        margin-right: 55%;
+    }
+
+    .header__text {
+        margin-left: 5%;
+    }
+
+    .phone {
+        margin-top: -5%;
+    }
+
+    .title2 {
+        margin-top: -5%;
+    }
+
+    .title3 {
+        margin-top: -35%;
+    }
+
+    .last-name {
+        margin-right: 20%;
+    }
+
+    #message {
+        width: 53%;
+    }
+
+    #email {
+        width: 52%;
+    }
+
+    .footer {
+        padding-left: 2%;
+    }
+
+}
+
+/* Hamburger Menu Icon */
+.menu-icon .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333;
+}
+
+/* Full-Screen Overlay Menu */
+.overlay {
+    margin-top: -70%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.9);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+}
+
+.overlay .menu-item {
+    padding-right: 40%;
+    padding-bottom: 20px;
+    font-family: "Oswald m os", sans-serif;
+    margin: 15px;
+    font-size: 2em;
+    color: rgb(218, 184, 125, 1);
+    text-decoration: none;
+}
+
+.menu-icon {
+    width: 30px;
+    margin-left: -180%;
+}
+
+.menu-item--active {
+    color: white;
+}
+
+#close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
 }
 
 
-/* FIRST PAGE/HEADER/SCROLLBAR */
+/* Media Query for Mobile Screens */
+@media only screen and (max-width: 768px) {
+
+    .header {
+        padding-left: 50%;
+        width: 100%;
+        height: 200px;
+    }
+
+    .header__menu {
+        display: none;
+    }
+
+    .header__text {
+        font-size: 1.1rem;
+        width: 100%;
+        margin-left: -21.5%;
+    }
+
+    .header__logo img {
+        margin-top: 50%;
+        width: 100px;
+        height: 100px;
+        margin-left: -20%;
+    }
+
+    .header_icons {
+        width: 10%;
+    }
+
+    .footer {
+        padding-left: 50%;
+        height: 20%;
+    }
+
+
+
+    /* ... more styles for mobile here */
+}
+
+
+/* FIRST PAGE/HEADER/SCROLLBAR/RESPONSIVENESS */
 
 
 @keyframes slideInRightToLeft {
@@ -236,18 +376,18 @@
 
 .title {
     font-family: "Oswald m os", sans-serif;
-    font-size: 38px;
+    font-size: 2.375rem;
 }
 
-
-
 .image-container {
-    position: relative;
-    overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .clothes2 img {
     width: 100%;
+    height: 749px;
+    object-fit: cover;
 }
 
 .clothes2.shrinkable-photo {
@@ -258,37 +398,37 @@
 
 .phone {
     position: absolute;
-    top: 20%;
-    left: 865px;
+    top: 45%;
+    left: 60%;
     z-index: 1;
+    border-radius: 10%;
 }
 
 .photo__text2 {
     font-family: "Oswald m os", sans-serif;
     position: absolute;
     font-weight: 400;
-    top: 50%;
-    left: 40%;
+    top: 45%;
+    left: 45%;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
-    width: 631.78px;
-    height: 216px;
+    width: 40%;
+    height: 20%;
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 10%;
 }
 
 .title2 {
-    padding-top: 250px;
-    font-size: 38px;
+    padding-top: 30%;
+    font-size: 2.375rem;
     text-align: left;
 }
 
 .par {
-    width: 416.43px;
-    height: 355.2px;
+    width: 70%;
     padding-top: 50px;
     text-align: left;
-    font-size: 22px;
+    font-size: 1.375rem;
     line-height: normal;
     vertical-align: baseline;
     letter-spacing: normal;
@@ -301,6 +441,7 @@
 .woman img {
     width: 100%;
     height: 1193px;
+    object-fit: cover;
 }
 
 .zoomable-image {
@@ -314,50 +455,52 @@
     font-family: "Oswald m os", sans-serif;
     position: absolute;
     font-weight: 400;
-    top: 195%;
+    top: 155%;
     left: 40%;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
-    width: 632px;
-    height: 216px;
+    width: 45%;
+    height: 23%;
     text-align: center;
-    padding-bottom: 100px;
+    padding-bottom: 10%;
 
 }
 
 .title3 {
-    margin-left: 300px;
-    width: 400px;
+    margin-left: 50%;
+    width: 50%;
     color: white;
-    font-size: 54px;
+    font-size: 3.375rem;
     transform: translate(-50%, -50%); /* Center the text */
 }
 
 #p1, #p3, #p5, #p7, #p9 {
-    margin-top: 5px;
-    width: 450px;
-    height: 92.4px;
+    margin-top: 1%;
+    width: 70%;
     text-align: left;
-    font-size: 22px;
-    margin-right: 800px;
+    font-size: 1.375rem;
+    margin-right: 70%;
 }
 
 #p1 {
-    margin-top: 70px;
+    margin-top: 12%;
 }
 
 #p2, #p4, #p6, #p8 {
-    margin-top: 5px;
-    padding-bottom: 5px;
-    width: 450px;
-    height: 92.4px;
+    margin-top: 1%;
+    padding-bottom: 1px;
+    width: 70%;
+    height: 50%;
     text-align: left;
-    font-size: 22px;
-    margin-left: 550px;
+    font-size: 1.375rem;
+    margin-left: 80%;
 
 }
 
 .footer {
+    color: black;
+    font-family: "Oswald m os", sans-serif;
+    font-size: 1.325rem;
     text-align: center;
     width: 100%;
     height: 147px;
@@ -366,6 +509,11 @@
     position: relative; /* z-index only works on positioned elements */
     background-color: #ffc37b;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+}
+
+.footer p {
+    text-align: center;
+    padding-left: 83%;
 }
 
 
@@ -383,13 +531,13 @@
 }
 
 .title4 {
-    margin-top: 150px;
-    font-size: 56px;
+    margin-top: 10%;
+    font-size: 3.5rem;
 }
 
 .par2 {
-    margin-top: 35px;
-    font-size: 18px;
+    margin-top: 3%;
+    font-size: 1.125rem;
 }
 
 body, html {
@@ -402,8 +550,7 @@ body, html {
     justify-content: space-between;
     margin: 0 auto;
     max-width: 100%;
-    height: 710px;
-    padding-top: 50px;
+    padding-top: 7%;
 }
 
 .contact-form {
@@ -424,7 +571,7 @@ body, html {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 30%;
+    object-position: center;
     transition: transform 0.3s ease;
     transform-style: preserve-3d;
 }
@@ -432,7 +579,6 @@ body, html {
 
 .contact-form {
     flex: 0.9;
-    padding: 20px;
 }
 
 input[type="text"],
@@ -440,12 +586,11 @@ input[type="email"],
 textarea {
     display: block;
     width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 10%;
     background-color: transparent;
     border: none;
     border-bottom: 1px solid white;
-    font-size: 17px;
+    font-size: 1.063rem;
     color: white;
     outline: none;
 }
@@ -469,40 +614,32 @@ textarea:hover {
 
 .single-field {
     flex: 1;
-    margin-right: 10px;
 }
 
 .single-field label {
+    margin-top: 2%;
     display: block;
-    margin-bottom: 5px;  /* Adjust as needed */
-    font-size: 14px;  /* Adjust as needed */
+    margin-bottom: 1%;  /* Adjust as needed */
+    font-size: 0.875rem;  /* Adjust as needed */
     color: #FFF;  /* Adjust as needed */
-}
-
-.single-field input[type="text"] {
-    width: 100%;
-    /* Your existing styles */
-}
-
-.name-fields .single-field:last-child {
-    margin-right: 0;
 }
 
 /* For the first and last name fields */
 #first_name,
 #last_name {
-    width: 200px;
-    height: 37px;
+    width: 47%;
+    height: 45%;
 }
 
 .last-name {
-    margin-left: -190px;
+    margin-left: -27%;
 }
 
 /* For the email field */
 input[type="email"] {
     width: 438px;
     height: 37px;
+    margin-bottom: 5%;
 }
 
 input[type="email"]:invalid {
@@ -512,9 +649,10 @@ input[type="email"]:invalid {
 
 /* For the message field */
 textarea {
-    width: 438px;
+    width: 67%;
     height: 67px;
     resize: none;
+    margin-bottom: 5%;
 }
 
 button {
