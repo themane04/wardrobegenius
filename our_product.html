@@ -25,6 +25,21 @@
         <a href="home.html" class="menu-item">Home</a>
         <a href="our_product.html" class="menu-item">Our Product</a>
         <a href="contact.html" class="menu-item">Contact</a>
+        <div class="header_icons overlay_specific">
+            <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
+                <img src="/fotos/fb.webp" alt="facebook logo icon">
+            </a>
+            <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
+               target="_blank" rel="noopener noreferrer">
+                <img src="fotos/ig.webp" alt="instagram logo icon">
+            </a>
+            <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
+                <img src="fotos/twitter.webp" alt="twitter logo icon">
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+                <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+            </a>
+        </div>
     </div>
 
     <div class="header__logo slide-in-element" id="logo">
@@ -217,22 +232,30 @@
     });
 
     // Burger menu mobile
-    document.addEventListener("DOMContentLoaded", function () {
-        // Get menu toggle button and menu overlay
-        const menuToggle = document.getElementById("menu-toggle");
-        const menuOverlay = document.getElementById("menu-overlay");
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the menu button, close button and overlay
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-        // Toggle menu overlay
-        menuToggle.addEventListener("click", function () {
-            if (menuOverlay.style.visibility === "visible") {
-                menuOverlay.style.visibility = "hidden";
-                menuOverlay.style.opacity = 0;
+        // Function to toggle overlay visibility
+        function toggleMenu() {
+            if (menuOverlay.style.visibility === 'visible') {
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.opacity = '0';
             } else {
-                menuOverlay.style.visibility = "visible";
-                menuOverlay.style.opacity = 1;
+                menuOverlay.style.visibility = 'visible';
+                menuOverlay.style.opacity = '1';
             }
-        });
+        }
+
+        // Add click event to menu button
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Add click event to close button
+        closeBtn.addEventListener('click', toggleMenu);
     });
+
 </script>
 <footer class="footer">
     <p>© 2023 WardrobeGenius</p>
