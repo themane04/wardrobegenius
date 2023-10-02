@@ -17,16 +17,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
-    <!-- Hamburger Menu Icon -->
-    <div id="menu-toggle" class="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+    <div id="menu-btn" class="menu-btn">
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
     </div>
-    <!-- Full-Screen Overlay Menu -->
+
     <div id="menu-overlay" class="overlay">
-        <button id="close-button">X</button>
-        <a href="home.html" class="menu-item menu-item--active">Home</a>
+        <button id="close-btn" class="close-btn">X</button>
+        <a href="home.html" class="menu-item">Home</a>
         <a href="our_product.html" class="menu-item">Our Product</a>
         <a href="contact.html" class="menu-item">Contact</a>
     </div>
@@ -69,10 +68,9 @@
 <div class="photo">
     <img id="zoomImg" src="fotos/clothes.jpg" alt="photo with clothes hanging">
     <div class="photo__text">
-        <h2 class="slide-in-element title" style="font-size: 36px">Our Story</h2>
+        <h2 class="slide-in-element">Our Story</h2>
         <p class="slide-in-element">____</p>
-        <h3 class="slide-in-element"
-            style="padding-top: 20px; font-family: 'Jockey One', sans-serif; letter-spacing: 0.03em; font-size: 22px">
+        <h3 class="slide-in-element">
             The idea for WardrobeGenius was born out of a personal challenge: the everyday dilemma of not knowing what
             to
             wear from one's own closet. We wanted to create a simple, intelligent solution that helps people better
@@ -126,25 +124,34 @@
     });
 
     // Burger menu mobile
-    document.addEventListener("DOMContentLoaded", function() {
-        // Get menu toggle button and menu overlay
-        const menuToggle = document.getElementById("menu-toggle");
-        const menuOverlay = document.getElementById("menu-overlay");
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the menu button, close button and overlay
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-        // Toggle menu overlay
-        menuToggle.addEventListener("click", function() {
-            if (menuOverlay.style.visibility === "visible") {
-                menuOverlay.style.visibility = "hidden";
-                menuOverlay.style.opacity = 0;
+        // Function to toggle overlay visibility
+        function toggleMenu() {
+            if (menuOverlay.style.visibility === 'visible') {
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.opacity = '0';
             } else {
-                menuOverlay.style.visibility = "visible";
-                menuOverlay.style.opacity = 1;
+                menuOverlay.style.visibility = 'visible';
+                menuOverlay.style.opacity = '1';
             }
-        });
+        }
+
+        // Add click event to menu button
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Add click event to close button
+        closeBtn.addEventListener('click', toggleMenu);
     });
 
 
-    document.getElementById("close-button").addEventListener("click", function() {
+
+
+    document.getElementById("close-button").addEventListener("click", function () {
         const overlay = document.getElementById("menu-overlay");
         overlay.style.visibility = "hidden";
         overlay.style.opacity = "0";
