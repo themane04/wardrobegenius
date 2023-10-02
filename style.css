@@ -227,12 +227,16 @@
 
 /* Burger Menu Styles */
 .menu-btn__bar {
-    display: block;
+    display: none;
     width: 10vw;
     height: 1vw;
-    margin: 1vw auto;
+    margin: 1vw;
     margin-left: 50vw;
     background-color: #333;
+}
+
+.menu-btn {
+    padding-bottom: 10vw;
 }
 
 /* Full-Screen Overlay Menu */
@@ -242,15 +246,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s, opacity 0.3s;
+    padding-top: 30vw;
 }
 
 .menu-item {
@@ -263,8 +268,8 @@
 .close-btn {
     color: #FFC37B;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 10vw;
+    right: 20vw;
     background: none;
     border: none;
     font-size: 2em;
@@ -275,48 +280,149 @@
 @media only screen and (max-width: 768px) {
 
     .header {
-        padding-left: 5vw;
         width: 100%;
         height: 40vw;
+    }
+
+    .menu-btn__bar {
+        display: block;
     }
 
     .header__menu {
         display: none;
     }
 
+    .footer p {
+        margin-left: -25vw;
+        font-size: 3vw;
+    }
+
     .header__text {
+        margin-top: 33vw;
         font-size: 3.5vw;
         width: 100vw;
         margin-left: -19vw;
     }
 
     .header__logo img {
-        margin-top: 10vw;
-        width: 20vw;
-        height: 20vw;
-        margin-left: -95vw;
+        margin-top: -1vw;
+        width: 30vw;
+        height: 30vw;
+        margin-left: -99.9vw;
     }
 
     .header_icons {
-        width: 10%;
-        margin-left: -50vw;
-        z-index: 1000;
+        display: none;
+    }
+
+    .header_icons.overlay_specific {
+        filter: invert(1);
+        display: block;
+        position: absolute;
+        top: 100vw;
+        left: 50vw;
+        transform: translate(-50%, 0);
     }
 
     .photo {
-        width: 104vw;
+        width: 100%;
+        height: auto;
+    }
+
+    .photo img {
+        object-fit: cover;
+        height: 170vw;
     }
 
     #h1 {
-        font-size: 11vw;
+        margin-top: 10vw;
+        font-size: 10vw;
     }
 
     #h6 {
-        font-size: 6vw;
+        padding-top: 5vw;
+        font-size: 5vw;
+    }
+
+    .page__text p {
+        line-height: 10vw;
+        width: 80vw;
+        padding-top: 6vw;
+        padding-bottom: 10vw;
+        font-size: 4vw;
+    }
+
+    .photo__text h2 {
+        margin-top: 10vw;
+        font-size: 10vw;
+    }
+
+    .photo__text h3 {
+        margin-left: -10vw;
+        font-size: 5vw;
+        width: 70vw;
+    }
+
+    .photo__text2 {
+        display: none;
+        margin-top: -50vw;
+        z-index: 100;
+        position: absolute;
+    }
+
+    .clothes2 img {
+        height: 200px;
+        object-fit: cover;
+        width: auto;
+    }
+
+    .woman img {
+        width: 100%;
+        height: 170vw;
     }
 
 
-    /* ... more styles for mobile here */
+    .phone img {
+        display: none;
+    }
+
+
+    .title3 {
+        margin-right: -40vw;
+        padding-top: 40vw;
+    }
+
+
+
+    .contact h1 {
+        font-size: 10vw;
+    }
+
+    .contact p {
+        line-height: 10vw;
+        padding-left: 15vw;
+        width: 70vw;
+        font-size: 4vw;
+    }
+
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-photo,
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form {
+        margin-top: -1vw;
+        margin-bottom: 20vw;
+    }
+
+    .single-field {
+        font-size: 30vw;
+    }
+
 }
 
 
@@ -326,7 +432,7 @@
 @keyframes slideInRightToLeft {
     0% {
         opacity: 0;
-        transform: translateX(100px); /* Positive value for sliding in from the right */
+        transform: translateX(100px);
     }
     100% {
         opacity: 1;
@@ -557,6 +663,9 @@ body, html {
 
 .contact-form {
     flex: 0.9;
+    font-family: "Oswald m os", sans-serif;
+    padding-top: 10vw;
+    padding-left: 10vw;
 }
 
 input[type="text"],
@@ -646,10 +755,4 @@ button {
 button:hover {
     background-color: white;
     border: 1px solid black;
-}
-
-.contact-form {
-    font-family: "Oswald m os", sans-serif;
-    padding-top: 10vw;
-    padding-left: 10vw;
 }
