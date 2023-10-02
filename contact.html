@@ -14,18 +14,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
-    <!-- Hamburger Menu Icon -->
-    <div id="menu-toggle" class="menu-icon">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+    <div id="menu-btn" class="menu-btn">
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
     </div>
-    <!-- Full-Screen Overlay Menu -->
+
     <div id="menu-overlay" class="overlay">
-        <button id="close-button">X</button>
+        <button id="close-btn" class="close-btn">X</button>
         <a href="home.html" class="menu-item">Home</a>
         <a href="our_product.html" class="menu-item">Our Product</a>
-        <a href="contact.html" class="menu-item menu-item--active">Contact</a>
+        <a href="contact.html" class="menu-item">Contact</a>
     </div>
 
     <div class="header__logo slide-in-element" id="logo">
@@ -139,13 +138,13 @@
     });
 
     // Burger menu mobile
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
         // Get menu toggle button and menu overlay
         const menuToggle = document.getElementById("menu-toggle");
         const menuOverlay = document.getElementById("menu-overlay");
 
         // Toggle menu overlay
-        menuToggle.addEventListener("click", function() {
+        menuToggle.addEventListener("click", function () {
             if (menuOverlay.style.visibility === "visible") {
                 menuOverlay.style.visibility = "hidden";
                 menuOverlay.style.opacity = 0;
