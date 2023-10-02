@@ -11,19 +11,19 @@
 
 /* Handle (or thumb) of the scrollbar */
 ::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.7);  /* Almost black, slightly transparent */
+    background: rgba(0, 0, 0, 0.7); /* Almost black, slightly transparent */
     border-radius: 4px;
 }
 
 /* Add a background color to the scrollbar track */
 ::-webkit-scrollbar-track {
-    background: rgba(128, 128, 128, 0.3);  /* Light gray with transparency */
-    border-radius: 4px;  /* Rounded corners to match the thumb */
+    background: rgba(128, 128, 128, 0.3); /* Light gray with transparency */
+    border-radius: 4px; /* Rounded corners to match the thumb */
 }
 
 /* Optional: Style for hover state of the scrollbar thumb */
 ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0, 0, 0, 0.9);  /* A bit darker when hovering */
+    background: rgba(0, 0, 0, 0.9); /* A bit darker when hovering */
 }
 
 .page1 {
@@ -61,7 +61,7 @@
     font-family: SuezOne, sans-serif;
     visibility: inherit;
     width: 100%;
-    height: 210px;
+    height: 14vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,13 +70,17 @@
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
+.header__logo img {
+    margin-left: -39vw;
+}
+
 .header__menu {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
+    gap: 1vw;
     margin-left: auto;
-    margin-right: 52rem;
-    margin-top: 3rem;
+    margin-right: 55vw;
+    margin-top: 3vw;
 }
 
 .menu__item {
@@ -86,9 +90,9 @@
     text-decoration: none;
     font-weight: bold;
     position: relative;
-    padding: 1rem;
-    color: black; /* Set the text color to black */
-    z-index: 1; /* Make sure the text stays above the background shape */
+    padding: 1vw;
+    color: black;
+    z-index: 1;
 }
 
 .menu__item::before {
@@ -101,7 +105,7 @@
     height: auto;
     width: auto;
     background-color: #FFC37B; /* Background shape color */
-    border-radius: 20px; /* Rounded corners */
+    border-radius: 1vw; /* Rounded corners */
     z-index: -1;
 }
 
@@ -111,8 +115,8 @@
 
 .header__logo {
     position: absolute; /* Take this out of the normal flow */
-    top: 10%; /* Adjust these as needed */
-    left: 63%; /* Adjust these as needed */
+    top: 1.3vw; /* Adjust these as needed */
+    left: 100vw; /* Adjust these as needed */
 }
 
 .active::before {
@@ -120,28 +124,28 @@
 }
 
 .header__logo img {
-    width: 170px;
-    height: 170px;
+    width: 11vw;
+    height: 11vw;
 }
 
 .header__text {
     color: black;
     position: absolute; /* Takes it out of the normal flow */
-    top: 10%; /* Distance from the top of the header */
-    left: 22%; /* Distance from the left of the header */
+    top: 1vw; /* Distance from the top of the header */
+    left: 22vw; /* Distance from the left of the header */
     font-style: italic;
     font-family: SuezOne, sans-serif;
-    font-size: 1.25rem;
-    letter-spacing: 0.05em;
+    font-size: 1.25vw;
+    letter-spacing: 0.05vw;
     font-weight: bold;
 }
 
 .header_icons {
     position: absolute;
-    top: 40%;
-    left: 85%;
+    top: 5.5vw;
+    left: 82vw;
     display: flex;
-    gap: 8%;
+    gap: 1vw;
 }
 
 .page__text {
@@ -149,40 +153,40 @@
     letter-spacing: 0;
     background-color: #FFC37B;
     margin: auto; /* Centers the block */
-    padding: 1%;
-    padding-bottom: 5%;
+    padding-top: -15vw;
+    padding-bottom: 5vw;
     color: white;
     text-align: center;
 }
 
 .page__text h1 {
     letter-spacing: normal;
-    font-size: 3.5rem;
+    font-size: 3.5vw;
     margin: auto;
-    padding-top: 10%;
+    padding-top: 10vw;
 }
 
 .page__text h6 {
     vertical-align: baseline;
-    font-size: 1.2rem;
+    font-size: 1.2vw;
     margin: auto;
-    padding-top: 2%;
+    padding-top: 2vw;
 }
 
 .page__text p {
-    line-height: 1.6em;
+    line-height: 1.6vw;
     letter-spacing: normal;
-    font-size: 1.125rem;
+    font-size: 1.125vw;
     margin: auto;
-    padding-top: 3%;
-    width: 40%;
+    padding-top: 3vw;
+    width: 40vw;
 }
 
 .photo {
     position: relative;
-    width: 100%; /* or whatever size you want */
-    height: 636px; /* or whatever size you want */
-    overflow: hidden; /* so that any zoom won't overflow */
+    width: 100%;
+    height: 50vw;
+    overflow: hidden;
     object-fit: cover;
 }
 
@@ -196,68 +200,43 @@
     font-family: "Oswald m os", sans-serif;
     position: absolute;
     font-weight: 400;
-    top: 50%;
-    left: 50%;
+    top: 30vw;
+    left: 50vw;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
-    width: 50%;
-    height: 50%;
+    width: 50vw;
+    height: 50vw;
     text-align: center;
 }
 
-/* Media Query for Larger Screens (bigger than 1080p) */
-@media screen and (min-width: 1921px) {
-
-    .header__menu {
-        margin-right: 55%;
-    }
-
-    .header__text {
-        margin-left: 5%;
-    }
-
-    .phone {
-        margin-top: -5%;
-    }
-
-    .title2 {
-        margin-top: -5%;
-    }
-
-    .title3 {
-        margin-top: -35%;
-    }
-
-    .last-name {
-        margin-right: 20%;
-    }
-
-    #message {
-        width: 53%;
-    }
-
-    #email {
-        width: 52%;
-    }
-
-    .footer {
-        padding-left: 2%;
-    }
-
+.photo__text h2 {
+    padding-top: 3vw;
+    font-size: 2vw;
 }
 
-/* Hamburger Menu Icon */
-.menu-icon .bar {
+.photo__text p {
+    padding-top: 3vw;
+}
+
+.photo__text h3 {
+    padding-top: 5vw;
+    font-family: 'Jockey One', sans-serif;
+    letter-spacing: 0.03vw;
+    font-size: 1.5vw;
+}
+
+/* Burger Menu Styles */
+.menu-btn__bar {
     display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
+    width: 10vw;
+    height: 1vw;
+    margin: 1vw auto;
+    margin-left: 50vw;
     background-color: #333;
 }
 
 /* Full-Screen Overlay Menu */
 .overlay {
-    margin-top: -70%;
     position: fixed;
     top: 0;
     left: 0;
@@ -274,44 +253,31 @@
     transition: visibility 0.3s, opacity 0.3s;
 }
 
-.overlay .menu-item {
-    padding-right: 40%;
-    padding-bottom: 20px;
-    font-family: "Oswald m os", sans-serif;
+.menu-item {
+    color: #FFC37B;
     margin: 15px;
     font-size: 2em;
-    color: rgb(218, 184, 125, 1);
     text-decoration: none;
 }
 
-.menu-icon {
-    width: 30px;
-    margin-left: -180%;
-}
-
-.menu-item--active {
-    color: white;
-}
-
-#close-button {
+.close-btn {
+    color: #FFC37B;
     position: absolute;
     top: 20px;
     right: 20px;
     background: none;
     border: none;
-    font-size: 24px;
-    color: white;
+    font-size: 2em;
     cursor: pointer;
 }
-
 
 /* Media Query for Mobile Screens */
 @media only screen and (max-width: 768px) {
 
     .header {
-        padding-left: 50%;
+        padding-left: 5vw;
         width: 100%;
-        height: 200px;
+        height: 40vw;
     }
 
     .header__menu {
@@ -319,27 +285,35 @@
     }
 
     .header__text {
-        font-size: 1.1rem;
-        width: 100%;
-        margin-left: -21.5%;
+        font-size: 3.5vw;
+        width: 100vw;
+        margin-left: -19vw;
     }
 
     .header__logo img {
-        margin-top: 50%;
-        width: 100px;
-        height: 100px;
-        margin-left: -20%;
+        margin-top: 10vw;
+        width: 20vw;
+        height: 20vw;
+        margin-left: -95vw;
     }
 
     .header_icons {
         width: 10%;
+        margin-left: -50vw;
+        z-index: 1000;
     }
 
-    .footer {
-        padding-left: 50%;
-        height: 20%;
+    .photo {
+        width: 104vw;
     }
 
+    #h1 {
+        font-size: 11vw;
+    }
+
+    #h6 {
+        font-size: 6vw;
+    }
 
 
     /* ... more styles for mobile here */
@@ -376,7 +350,7 @@
 
 .title {
     font-family: "Oswald m os", sans-serif;
-    font-size: 2.375rem;
+    font-size: 2.375vw;
 }
 
 .image-container {
@@ -386,7 +360,7 @@
 
 .clothes2 img {
     width: 100%;
-    height: 749px;
+    height: 50vw;
     object-fit: cover;
 }
 
@@ -398,37 +372,41 @@
 
 .phone {
     position: absolute;
-    top: 45%;
-    left: 60%;
+    top: 26vw;
+    left: 60vw;
     z-index: 1;
-    border-radius: 10%;
+}
+
+.phone img {
+    height: 60vh;
+    border-radius: 3vw;
 }
 
 .photo__text2 {
     font-family: "Oswald m os", sans-serif;
     position: absolute;
     font-weight: 400;
-    top: 45%;
+    top: 53%;
     left: 45%;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
-    width: 40%;
-    height: 20%;
+    width: 40vw;
+    height: 20vw;
     text-align: center;
     padding-bottom: 10%;
 }
 
 .title2 {
-    padding-top: 30%;
-    font-size: 2.375rem;
+    padding-top: 17vw;
+    font-size: 2.375vw;
     text-align: left;
 }
 
 .par {
-    width: 70%;
-    padding-top: 50px;
+    width: 30vw;
+    padding-top: 2vw;
     text-align: left;
-    font-size: 1.375rem;
+    font-size: 1.375vw;
     line-height: normal;
     vertical-align: baseline;
     letter-spacing: normal;
@@ -440,7 +418,7 @@
 
 .woman img {
     width: 100%;
-    height: 1193px;
+    height: 80vw;
     object-fit: cover;
 }
 
@@ -455,31 +433,32 @@
     font-family: "Oswald m os", sans-serif;
     position: absolute;
     font-weight: 400;
-    top: 155%;
-    left: 40%;
+    top: 80vw;
+    left: 40vw;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
-    width: 45%;
-    height: 23%;
+    width: 45vw;
+    height: 23vw;
     text-align: center;
-    padding-bottom: 10%;
+    padding-bottom: 10vw;
 
 }
 
 .title3 {
-    margin-left: 50%;
-    width: 50%;
+    margin-top: 10vw;
+    margin-left: 10vw;
+    width: 50vw;
     color: white;
-    font-size: 3.375rem;
+    font-size: 3.375vw;
     transform: translate(-50%, -50%); /* Center the text */
 }
 
 #p1, #p3, #p5, #p7, #p9 {
-    margin-top: 1%;
-    width: 70%;
+    margin-top: 1vw;
+    width: 26vw;
     text-align: left;
-    font-size: 1.375rem;
-    margin-right: 70%;
+    font-size: 1.375vw;
+    margin-left: 5vw;
 }
 
 #p1 {
@@ -487,33 +466,32 @@
 }
 
 #p2, #p4, #p6, #p8 {
-    margin-top: 1%;
-    padding-bottom: 1px;
-    width: 70%;
-    height: 50%;
+    margin-top: 1vw;
+    padding-bottom: 1vw;
+    width: 30vw;
     text-align: left;
-    font-size: 1.375rem;
-    margin-left: 80%;
+    font-size: 1.375vw;
+    margin-left: 40vw;
 
 }
 
 .footer {
     color: black;
     font-family: "Oswald m os", sans-serif;
-    font-size: 1.325rem;
+    font-size: 1.325vw;
     text-align: center;
     width: 100%;
-    height: 147px;
-    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2); /* Adjust values as needed */
-    z-index: 1000; /* Set a high z-index */
-    position: relative; /* z-index only works on positioned elements */
+    height: 7vw;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
     background-color: #ffc37b;
     background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
 .footer p {
     text-align: center;
-    padding-left: 83%;
+    padding-left: 83vw;
+    padding-top: 2.5vw;
 }
 
 
@@ -525,19 +503,19 @@
 }
 
 .contact {
-    font-family: "Oswald m os",sans-serif;
+    font-family: "Oswald m os", sans-serif;
     text-align: center;
     color: white;
 }
 
 .title4 {
-    margin-top: 10%;
-    font-size: 3.5rem;
+    margin-top: 10vw;
+    font-size: 3.5vw;
 }
 
 .par2 {
-    margin-top: 3%;
-    font-size: 1.125rem;
+    margin-top: 3vw;
+    font-size: 1.125vw;
 }
 
 body, html {
@@ -549,8 +527,8 @@ body, html {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    max-width: 100%;
-    padding-top: 7%;
+    max-width: 100vw;
+    padding-top: 7vw;
 }
 
 .contact-form {
@@ -563,7 +541,7 @@ body, html {
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    height: 710px;
+    height: 50vw;
     overflow: hidden;
 }
 
@@ -617,11 +595,11 @@ textarea:hover {
 }
 
 .single-field label {
-    margin-top: 2%;
+    margin-top: 2vw;
     display: block;
-    margin-bottom: 1%;  /* Adjust as needed */
-    font-size: 0.875rem;  /* Adjust as needed */
-    color: #FFF;  /* Adjust as needed */
+    margin-bottom: 1%; /* Adjust as needed */
+    font-size: 0.875vw; /* Adjust as needed */
+    color: #FFF; /* Adjust as needed */
 }
 
 /* For the first and last name fields */
@@ -637,8 +615,8 @@ textarea:hover {
 
 /* For the email field */
 input[type="email"] {
-    width: 438px;
-    height: 37px;
+    width: 28.3vw;
+    height: 3vw;
     margin-bottom: 5%;
 }
 
@@ -650,7 +628,7 @@ input[type="email"]:invalid {
 /* For the message field */
 textarea {
     width: 67%;
-    height: 67px;
+    height: 4vw;
     resize: none;
     margin-bottom: 5%;
 }
@@ -659,8 +637,8 @@ button {
     cursor: pointer;
     background-color: #FFC37B;
     color: black;
-    width: 140px;
-    height: 36px;
+    width: 8vw;
+    height: 2.5vw;
     border: 1px solid white;
     transition: all 0.3s ease;
 }
@@ -671,7 +649,7 @@ button:hover {
 }
 
 .contact-form {
-    font-family: "Oswald m os",sans-serif;
-    padding-top: 190px;
-    padding-left: 140px;
+    font-family: "Oswald m os", sans-serif;
+    padding-top: 10vw;
+    padding-left: 10vw;
 }
