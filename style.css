@@ -403,8 +403,7 @@ body, html {
         z-index: -5;
         margin-top: 20vw;
         margin-left: -43vw;
-        width: auto;
-        height: 30vw;
+        width: 65vw;
     }
 
     .woman, .woman img {
