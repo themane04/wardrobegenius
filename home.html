@@ -30,17 +30,25 @@
         <a href="contact.html" class="menu-item">Contact</a>
         <div class="header_icons overlay_specific">
             <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
-                <img src="/fotos/fb.webp" alt="facebook logo icon">
+                <div>
+                    <img src="/fotos/fb.webp" alt="facebook logo icon">
+                </div>
             </a>
             <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
                target="_blank" rel="noopener noreferrer">
-                <img src="fotos/ig.webp" alt="instagram logo icon">
+                <div>
+                    <img src="fotos/ig.webp" alt="instagram logo icon">
+                </div>
             </a>
             <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
-                <img src="fotos/twitter.webp" alt="twitter logo icon">
+                <div>
+                    <img src="fotos/twitter.webp" alt="twitter logo icon">
+                </div>
             </a>
             <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
-                <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                <div>
+                    <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                </div>
             </a>
         </div>
     </div>
@@ -164,11 +172,14 @@
     });
 
 
-    document.getElementById("close-button").addEventListener("click", function () {
-        const overlay = document.getElementById("menu-overlay");
-        overlay.style.visibility = "hidden";
-        overlay.style.opacity = "0";
+    // Disable horizontal scrolling
+    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("scroll", function () {
+            console.log("Scroll event detected");
+            window.scrollTo(0, window.scrollY);
+        });
     });
+
 
 </script>
 <footer class="footer">
