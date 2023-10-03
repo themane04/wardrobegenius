@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Contact</title>
+    <link rel="icon" href="fotos/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
+    <div id="menu-btn" class="menu-btn">
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
+    </div>
+
+    <div id="menu-overlay" class="overlay">
+        <button id="close-btn" class="close-btn">X</button>
+        <a href="home.html" class="menu-item">Home</a>
+        <a href="our_product.html" class="menu-item">Our Product</a>
+        <a href="contact.html" class="menu-item">Contact</a>
+        <div class="header_icons overlay_specific">
+            <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="/fotos/fb.webp" alt="facebook logo icon">
+                </div>
+            </a>
+            <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
+               target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="fotos/ig.webp" alt="instagram logo icon">
+                </div>
+            </a>
+            <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="fotos/twitter.webp" alt="twitter logo icon">
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                </div>
+            </a>
+        </div>
+    </div>
+
     <div class="header__logo slide-in-element" id="logo">
         <img src="/fotos/logo.png" alt="background in the header with the text on top">
     </div>
@@ -67,16 +104,23 @@
                 <input type="email" id="email">
             </div>
             <div class="single-field">
-                <label for="message">Your Message</label>
+                <label for="message">Message</label>
                 <textarea id="message"></textarea>
             </div>
-            <button type="submit">Send Message</button>
+            <div id="button">
+                <button type="submit">Send</button>
+            </div>
+            <div id="thankYouMessage" style="display:none;">Thanks for submitting!</div>
         </form>
     </div>
 </div>
 
 
 <script>
+    // window.onbeforeunload = function () {
+    //    window.scrollTo(0, 0);
+    //}
+
     document.addEventListener("DOMContentLoaded", function () {
         // Email Validation
         const emailInput = document.querySelector('input[type="email"]');
@@ -88,12 +132,16 @@
             }
         });
 
-        // 3D Effect on Scroll for .contact-image
+        // Pull-Back on Scroll for .contact-image
         document.addEventListener("scroll", function () {
             const scrollPosition = window.scrollY;
             const image3D = document.querySelector(".contact-image img");
-            const rotation = `rotateX(${scrollPosition * 0.05}deg) scale(1.1)`; // Added scale(1.1)
-            image3D.style.transform = rotation;
+
+            // Calculate a scale factor based on the scroll position.
+            const scale = 1 + (scrollPosition / 3000);
+
+            // Apply the scale transformation.
+            image3D.style.transform = `scale(${scale})`;
         });
 
 
@@ -116,11 +164,54 @@
         window.addEventListener('load', checkPosition);
     });
 
+    // Burger menu mobile
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the menu button, close button and overlay
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        // Function to toggle overlay visibility
+        function toggleMenu() {
+            if (menuOverlay.style.visibility === 'visible') {
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.opacity = '0';
+            } else {
+                menuOverlay.style.visibility = 'visible';
+                menuOverlay.style.opacity = '1';
+            }
+        }
+
+        // Add click event to menu button
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Add click event to close button
+        closeBtn.addEventListener('click', toggleMenu);
+    });
+
+
+    // Disable horizontal scrolling
+    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("scroll", function () {
+            console.log("Scroll event detected");
+            window.scrollTo(0, window.scrollY);
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("myButton").addEventListener("click", function(event) {
+            console.log("Button clicked"); // Debugging line
+            event.preventDefault();
+            document.getElementById("thankYouMessage").style.display = "block";
+        });
+    });
+
+
 
 </script>
-
 <div style="color: transparent; height: 40px"></div>
-
-<footer class="footer"></footer>
+<footer class="footer">
+    <p>© 2023 WardrobeGenius</p>
+</footer>
 </body>
 </html>

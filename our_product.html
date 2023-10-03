@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8"/>
     <title>Our Product</title>
+    <link rel="icon" href="fotos/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
+    <div id="menu-btn" class="menu-btn slide-in-element">
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
+        <div class="menu-btn__bar"></div>
+    </div>
+
+    <div id="menu-overlay" class="overlay">
+        <button id="close-btn" class="close-btn">X</button>
+        <a href="home.html" class="menu-item">Home</a>
+        <a href="our_product.html" class="menu-item">Our Product</a>
+        <a href="contact.html" class="menu-item">Contact</a>
+        <div class="header_icons overlay_specific">
+            <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="/fotos/fb.webp" alt="facebook logo icon">
+                </div>
+            </a>
+            <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
+               target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="fotos/ig.webp" alt="instagram logo icon">
+                </div>
+            </a>
+            <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="fotos/twitter.webp" alt="twitter logo icon">
+                </div>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
+                <div>
+                    <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                </div>
+            </a>
+        </div>
+    </div>
+
     <div class="header__logo slide-in-element" id="logo">
         <img src="/fotos/logo.png" alt="background in the header with the text on top">
     </div>
@@ -51,6 +88,7 @@
     </div>
 </div>
 
+
 <div class="photo__text2">
     <h4 class="title2 slide-in-element">WardrobeGenius</h4>
     <p class="par slide-in-element">WardrobeGenius is more than just an app; it's your personal style assistant that
@@ -64,6 +102,8 @@
         with WardrobeGenius.</p>
 </div>
 
+<div style="color: transparent; height: 40px"></div>
+
 <div class="image-container2">
     <div class="woman zoomable-image">
         <img src="fotos/woman.jpg" alt="woman protecting her face from the sun with her hands">
@@ -75,12 +115,12 @@
             then
             automatically
             categorized.</p>
-        <p class="slide-in-element2" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or
+        <p class="slide-in-element" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or
             forecasted weather conditions.
         </p>
         <p class="slide-in-element" id="p3"><b>Social Sharing:</b> The ability to share outfits or seek feedback from
             friends within the app.</p>
-        <p class="slide-in-element2" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or
+        <p class="slide-in-element" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or
             accessories that fit your
             style,
             complete with
@@ -90,12 +130,12 @@
             meetings, or
             sporting
             events.</p>
-        <p class="slide-in-element2" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to
+        <p class="slide-in-element" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to
             try out new style
             combinations.</p>
         <p class="slide-in-element" id="p7"><b>Lookbook:</b> A section where you can save your favorite outfits for easy
             access later on.</p>
-        <p class="slide-in-element2" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your
+        <p class="slide-in-element" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your
             selected outfits are, based on
             material,
             manufacturing process, etc.</p>
@@ -111,6 +151,9 @@
 <div style="color: transparent; height: 40px"></div>
 
 <script>
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
 
     // The clothes image that shrinks
     document.addEventListener('DOMContentLoaded', function () {
@@ -127,15 +170,13 @@
 
                 shrinkablePhoto.style.transform = `scale(${scaleValue})`;
                 shrinkablePhoto.style.opacity = opacityValue;
-            }
-            if (scrollPosition >= initialTopPosition) {
-                // your existing scaling code here
             } else {
                 shrinkablePhoto.style.transform = 'scale(1)';
                 shrinkablePhoto.style.opacity = 1;
             }
         });
     });
+
 
     // Second image on the page that zooms in whilst scrolling
     // Grab the image element
@@ -161,6 +202,7 @@
         }
     });
 
+
     // The slide in animation for all elements on the page
     document.addEventListener("DOMContentLoaded", function () {
         var slideInElements = document.querySelectorAll('.slide-in-element');
@@ -181,6 +223,7 @@
         window.addEventListener('load', checkPosition);
     });
 
+
     // The second slide in animation for right to left for some of the text on the "woman.jpg" image
     document.addEventListener("DOMContentLoaded", function () {
         var slideInElements = document.querySelectorAll('.slide-in-element2');  // Updated class name
@@ -200,8 +243,42 @@
         window.addEventListener('resize', checkPosition);
         window.addEventListener('load', checkPosition);
     });
+
+
+    // Burger menu mobile
+    document.addEventListener('DOMContentLoaded', function () {
+        // Get the menu button, close button and overlay
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        // Function to toggle overlay visibility
+        function toggleMenu() {
+            if (menuOverlay.style.visibility === 'visible') {
+                menuOverlay.style.visibility = 'hidden';
+                menuOverlay.style.opacity = '0';
+            } else {
+                menuOverlay.style.visibility = 'visible';
+                menuOverlay.style.opacity = '1';
+            }
+        }
+
+        // Add click event to menu button
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // Add click event to close button
+        closeBtn.addEventListener('click', toggleMenu);
+    });
+
+    // Not working for the scroll !!!!!!!!!!
+    document.addEventListener("scroll", function () {
+        window.scrollTo(0, window.scrollY);
+    });
+
+
 </script>
 <footer class="footer">
+    <p>© 2023 WardrobeGenius</p>
 </footer>
 </body>
 </html>
