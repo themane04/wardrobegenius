@@ -27,17 +27,25 @@
         <a href="contact.html" class="menu-item">Contact</a>
         <div class="header_icons overlay_specific">
             <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
-                <img src="/fotos/fb.webp" alt="facebook logo icon">
+                <div>
+                    <img src="/fotos/fb.webp" alt="facebook logo icon">
+                </div>
             </a>
             <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
                target="_blank" rel="noopener noreferrer">
-                <img src="fotos/ig.webp" alt="instagram logo icon">
+                <div>
+                    <img src="fotos/ig.webp" alt="instagram logo icon">
+                </div>
             </a>
             <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
-                <img src="fotos/twitter.webp" alt="twitter logo icon">
+                <div>
+                    <img src="fotos/twitter.webp" alt="twitter logo icon">
+                </div>
             </a>
             <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
-                <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                <div>
+                    <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                </div>
             </a>
         </div>
     </div>
@@ -98,16 +106,19 @@
                 <label for="message">Message</label>
                 <textarea id="message"></textarea>
             </div>
-            <button type="submit">Send</button>
+            <div id="button">
+                <button type="submit">Send</button>
+            </div>
+            <div id="thankYouMessage" style="display:none;">Thanks for submitting!</div>
         </form>
     </div>
 </div>
 
 
 <script>
-    window.onbeforeunload = function () {
-        window.scrollTo(0, 0);
-    }
+    // window.onbeforeunload = function () {
+    //    window.scrollTo(0, 0);
+    //}
 
     document.addEventListener("DOMContentLoaded", function () {
         // Email Validation
@@ -176,6 +187,25 @@
         // Add click event to close button
         closeBtn.addEventListener('click', toggleMenu);
     });
+
+
+    // Disable horizontal scrolling
+    document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("scroll", function () {
+            console.log("Scroll event detected");
+            window.scrollTo(0, window.scrollY);
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("myButton").addEventListener("click", function(event) {
+            console.log("Button clicked"); // Debugging line
+            event.preventDefault();
+            document.getElementById("thankYouMessage").style.display = "block";
+        });
+    });
+
+
 
 </script>
 <div style="color: transparent; height: 40px"></div>
