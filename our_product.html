@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <header class="header">
-    <div id="menu-btn" class="menu-btn">
+    <div id="menu-btn" class="menu-btn slide-in-element">
         <div class="menu-btn__bar"></div>
         <div class="menu-btn__bar"></div>
         <div class="menu-btn__bar"></div>
@@ -27,17 +27,25 @@
         <a href="contact.html" class="menu-item">Contact</a>
         <div class="header_icons overlay_specific">
             <a href="https://www.facebook.com/marjan.tomev.35/" target="_blank" rel="noopener noreferrer">
-                <img src="/fotos/fb.webp" alt="facebook logo icon">
+                <div>
+                    <img src="/fotos/fb.webp" alt="facebook logo icon">
+                </div>
             </a>
             <a href="https://www.instagram.com/marjantomev_/?fbclid=IwAR0E5s9_jimNtT68Saf19afjF4yjAsREGKfgNToB-mYzNFIetE9fNJ2a0DQ"
                target="_blank" rel="noopener noreferrer">
-                <img src="fotos/ig.webp" alt="instagram logo icon">
+                <div>
+                    <img src="fotos/ig.webp" alt="instagram logo icon">
+                </div>
             </a>
             <a href="https://twitter.com/TheMane04" target="_blank" rel="noopener noreferrer">
-                <img src="fotos/twitter.webp" alt="twitter logo icon">
+                <div>
+                    <img src="fotos/twitter.webp" alt="twitter logo icon">
+                </div>
             </a>
             <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer">
-                <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                <div>
+                    <img src="fotos/tiktok.webp" alt="tiktok logo icon">
+                </div>
             </a>
         </div>
     </div>
@@ -79,6 +87,7 @@
     </div>
 </div>
 
+
 <div class="photo__text2">
     <h4 class="title2 slide-in-element">WardrobeGenius</h4>
     <p class="par slide-in-element">WardrobeGenius is more than just an app; it's your personal style assistant that
@@ -105,12 +114,12 @@
             then
             automatically
             categorized.</p>
-        <p class="slide-in-element2" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or
+        <p class="slide-in-element" id="p2"><b>Weather Integration:</b> Outfit suggestions tailored to current or
             forecasted weather conditions.
         </p>
         <p class="slide-in-element" id="p3"><b>Social Sharing:</b> The ability to share outfits or seek feedback from
             friends within the app.</p>
-        <p class="slide-in-element2" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or
+        <p class="slide-in-element" id="p4"><b>Shopping Assistant:</b> Recommendations for missing clothing items or
             accessories that fit your
             style,
             complete with
@@ -120,12 +129,12 @@
             meetings, or
             sporting
             events.</p>
-        <p class="slide-in-element2" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to
+        <p class="slide-in-element" id="p6"><b>Style Challenges:</b> Daily or weekly challenges that encourage users to
             try out new style
             combinations.</p>
         <p class="slide-in-element" id="p7"><b>Lookbook:</b> A section where you can save your favorite outfits for easy
             access later on.</p>
-        <p class="slide-in-element2" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your
+        <p class="slide-in-element" id="p8"><b>Sustainability Score:</b> A rating that shows how sustainable your
             selected outfits are, based on
             material,
             manufacturing process, etc.</p>
@@ -167,6 +176,7 @@
         });
     });
 
+
     // Second image on the page that zooms in whilst scrolling
     // Grab the image element
     const imgElement = document.querySelector('.zoomable-image');
@@ -191,6 +201,7 @@
         }
     });
 
+
     // The slide in animation for all elements on the page
     document.addEventListener("DOMContentLoaded", function () {
         var slideInElements = document.querySelectorAll('.slide-in-element');
@@ -211,6 +222,7 @@
         window.addEventListener('load', checkPosition);
     });
 
+
     // The second slide in animation for right to left for some of the text on the "woman.jpg" image
     document.addEventListener("DOMContentLoaded", function () {
         var slideInElements = document.querySelectorAll('.slide-in-element2');  // Updated class name
@@ -230,6 +242,7 @@
         window.addEventListener('resize', checkPosition);
         window.addEventListener('load', checkPosition);
     });
+
 
     // Burger menu mobile
     document.addEventListener('DOMContentLoaded', function () {
@@ -255,6 +268,12 @@
         // Add click event to close button
         closeBtn.addEventListener('click', toggleMenu);
     });
+
+    // Not working for the scroll !!!!!!!!!!
+    document.addEventListener("scroll", function () {
+        window.scrollTo(0, window.scrollY);
+    });
+
 
 </script>
 <footer class="footer">
