@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
+    /*border: 1px solid red;*/
+}
+
+body, html {
+    overflow-x: hidden;
 }
 
 /* Width of the scrollbar */
@@ -29,6 +34,7 @@
 .page1 {
     background-color: #FFC37B;
     overflow: auto;
+    overflow-x: hidden;
 }
 
 @keyframes slideIn {
@@ -230,7 +236,7 @@
     display: none;
     width: 10vw;
     height: 1vw;
-    margin: 1vw;
+    margin: 1.5vw;
     margin-left: 50vw;
     background-color: #333;
 }
@@ -247,7 +253,7 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.95);
-    z-index: 1;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -269,16 +275,24 @@
     color: #FFC37B;
     position: absolute;
     top: 10vw;
-    right: 20vw;
+    right: 3vw;
     background: none;
     border: none;
     font-size: 2em;
     cursor: pointer;
 }
 
+.close-btn:focus, .close-btn:active {
+    outline: none;
+    background: none;
+    box-shadow: none;
+}
+
+
 /* Media Query for Mobile Screens */
 @media only screen and (max-width: 768px) {
 
+    /* SETTINGS GENERAL/HEADER */
     .header {
         width: 100%;
         height: 40vw;
@@ -317,12 +331,15 @@
 
     .header_icons.overlay_specific {
         filter: invert(1);
-        display: block;
+        display: flex;
         position: absolute;
-        top: 100vw;
+        top: 150vw;
         left: 50vw;
         transform: translate(-50%, 0);
+        justify-content: space-between;
     }
+
+    /* FIRSTM PAGE */
 
     .photo {
         width: 100%;
@@ -341,7 +358,7 @@
 
     #h6 {
         padding-top: 5vw;
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     .page__text p {
@@ -349,7 +366,7 @@
         width: 80vw;
         padding-top: 6vw;
         padding-bottom: 10vw;
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .photo__text h2 {
@@ -363,36 +380,81 @@
         width: 70vw;
     }
 
-    .photo__text2 {
-        display: none;
-        margin-top: -50vw;
-        z-index: 100;
+    .photo__text2 h4{
+        margin-left: -16vw;
+        margin-top: 65vw;
+        font-size: 10vw;
+    }
+
+    .photo__text2 p {
+        margin-left: -12vw;
+        text-align: center;
+        width: 70vw;
+        font-size: 5vw;
+    }
+
+    /* SECONDM PAGE */
+
+    .clothes2, .clothes2 img {
+        aspect-ratio: 16 / 50;
+    }
+
+    .phone img {
+        z-index: -5;
+        margin-top: 20vw;
+        margin-left: -43vw;
+        width: auto;
+        height: 30vw;
+    }
+
+    .woman, .woman img {
+        margin-top: -20vw;
+        object-fit: cover;
+        width: 100%;
+        height: 315vw !important;
+    }
+
+    .title3 {
+        margin-right: -20vw;
+        padding-top: 305vw;
+    }
+
+    .photo__text3 h3 {
+        margin-left: -18vw;
+        width: 100vw;
+        font-size: 12vw;
+    }
+
+    .photo__text3 {
         position: absolute;
     }
 
-    .clothes2 img {
-        height: 200px;
-        object-fit: cover;
-        width: auto;
+    .image-container2 {
+        max-width: 100%;
+        margin: auto;
     }
 
-    .woman img {
-        width: 100%;
-        height: 170vw;
+    #p1, #p3, #p5, #p7, #p9, #p2, #p4, #p6, #p8 {
+        font-size: 5vw !important;
+        margin: 3vw;
+        width: 85vw !important;
     }
 
-
-    .phone img {
-        display: none;
+    #p1, #p3, #p5, #p7, #p9 {
+        position: relative;
+        left: -15vw;
     }
 
-
-    .title3 {
-        margin-right: -40vw;
-        padding-top: 40vw;
+    #p2, #p4, #p6, #p8 {
+        position: relative;
+        left: -46vw;
     }
 
+    #p1 {
+        padding-top: 10vw;
+    }
 
+    /* THIRDM PAGE */
 
     .contact h1 {
         font-size: 10vw;
@@ -402,27 +464,14 @@
         line-height: 10vw;
         padding-left: 15vw;
         width: 70vw;
-        font-size: 4vw;
+        font-size: 5vw;
     }
 
     .contact-container {
         flex-direction: column;
+        height: 250vw;
+        font-size: 10vw;
     }
-
-    .contact-photo,
-    .contact-form {
-        width: 100%;
-    }
-
-    .contact-form {
-        margin-top: -1vw;
-        margin-bottom: 20vw;
-    }
-
-    .single-field {
-        font-size: 30vw;
-    }
-
 }
 
 
@@ -449,9 +498,9 @@
     animation: slideInRightToLeft 2s forwards;
 }
 
-
 .page2 {
     background-color: rgb(218, 184, 125, 1);
+    overflow-x: hidden;
 }
 
 .title {
@@ -464,16 +513,25 @@
     height: 100%;
 }
 
+.clothes2 {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
 .clothes2 img {
     width: 100%;
-    height: 50vw;
+    height: auto;
     object-fit: cover;
+    transform: translateZ(0);
+    will-change: transform;
 }
 
 .clothes2.shrinkable-photo {
     transition: transform 0.3s ease;
-    transform: scale(1); /* Start at original size */
-    transform-origin: center center; /* Make sure the image scales from the center */
+    transform: scale(1);
+    transform-origin: center center;
 }
 
 .phone {
@@ -522,7 +580,14 @@
     overflow: hidden; /* hides the overflow */
 }
 
+.woman {
+    width: 100%;
+    position: relative;
+}
+
 .woman img {
+    top: 0;
+    left: 0;
     width: 100%;
     height: 80vw;
     object-fit: cover;
@@ -530,7 +595,7 @@
 
 .zoomable-image {
     transition: transform 0.5s ease;
-    transform: scale(1.01); /* Start slightly larger */
+    transform: scale(1);
     backface-visibility: hidden;
     filter: sepia(3%) saturate(120%) contrast(1) brightness(80%);
 }
@@ -551,8 +616,8 @@
 }
 
 .title3 {
-    margin-top: 10vw;
-    margin-left: 10vw;
+    margin-top: 25vw;
+    margin-left: 6vw;
     width: 50vw;
     color: white;
     font-size: 3.375vw;
@@ -564,7 +629,7 @@
     width: 26vw;
     text-align: left;
     font-size: 1.375vw;
-    margin-left: 5vw;
+    margin-left: 4vw;
 }
 
 #p1 {
@@ -577,7 +642,7 @@
     width: 30vw;
     text-align: left;
     font-size: 1.375vw;
-    margin-left: 40vw;
+    margin-left: 35vw;
 
 }
 
@@ -601,11 +666,12 @@
 }
 
 
-/* THIRD PAGE */
+/* SECOND PAGE */
 
 
 .page3 {
     background-color: rgb(253, 193, 122, 1);
+    overflow-x: hidden;
 }
 
 .contact {
@@ -718,6 +784,10 @@ textarea:hover {
     height: 45%;
 }
 
+#message {
+    font-family: "Oswald m os",sans-serif;
+}
+
 .last-name {
     margin-left: -27%;
 }
@@ -756,3 +826,68 @@ button:hover {
     background-color: white;
     border: 1px solid black;
 }
+
+
+ /* 2RESPONSIVENESS */
+/* Media Query for mobile */
+@media screen and (max-width: 768px) {
+    .name-fields {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    /* Fields will take full width */
+    #first_name,
+    #last_name,
+    input[type="email"],
+    textarea {
+        width: 80vw;
+        font-size: 5vw;
+        margin-bottom: 9vw;
+    }
+
+    /* Reset any other style that interferes */
+    .last-name {
+        margin-left: 0;
+    }
+
+    .contact-form label {
+        padding-top: 0;
+        padding-bottom: 5vw;
+        text-align: left;
+        font-size: 6vw;
+        margin: 0;
+    }
+
+    button {
+        font-size: 5vw;
+        width: 45vw;
+        height: 12vw;
+    }
+
+    #button {
+        padding-top: 8vw;
+        padding-bottom: 10vw;
+    }
+
+    #message {
+        font-family: "Oswald m os",sans-serif;
+        overflow-y: hidden;
+        padding-top: 5vw;
+        padding-bottom: 10vw;
+    }
+
+
+    input[type="email"] {
+        height: 5vw;
+        font-size: 5vw;
+    }
+
+    button:hover {
+        background-color: white;
+        border: 1px solid black;
+    }
+
+}
+
+
+/* THIRD PAGE */
