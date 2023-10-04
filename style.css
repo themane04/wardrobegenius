@@ -309,6 +309,13 @@ body, html {
     box-shadow: none;
 }
 
+@media only screen and (max-width: 1440px) {
+
+    .photo__text2 {
+        margin-top: 20vw;
+    }
+
+}
 
 /* Media Query for Mobile Screens */
 @media only screen and (max-width: 768px) {
