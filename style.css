@@ -42,7 +42,7 @@ body, html {
     position: fixed;
     bottom: 1.5vw;
     left: 1.5vw;
-    padding: 1.2vw;
+    padding: 15px;
     background-color: rgb(232, 31, 39);
     color: black;
     border-radius: 30px;
