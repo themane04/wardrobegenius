@@ -408,25 +408,25 @@ body, html {
     }
 
     .title2 {
-        position: absolute;
         font-size: 10vw;
+        text-align: center;
     }
 
     .central {
         margin-top: 85vw;
-        margin-left: 20vw;
+        margin-left: -5vw;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 70vw;
+
     }
 
     .photo__text2 p {
-        position: absolute;
-        top: 100vw;
-        text-align: center;
         width: 70vw;
         font-size: 5vw;
+        text-align: center;
     }
 
     /* SECONDM PAGE */
