@@ -409,15 +409,21 @@ body, html {
 
     .title2 {
         position: absolute;
-        margin-left: -8vw;
-        top: 80vw;
         font-size: 10vw;
+    }
+
+    .central {
+        margin-top: 80vw;
+        margin-left: 20vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .photo__text2 p {
         position: absolute;
-        margin-left: -5vw;
-        top: 108vw;
+        top: 95vw;
         text-align: center;
         width: 70vw;
         font-size: 5vw;
