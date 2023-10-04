@@ -408,13 +408,16 @@ body, html {
     }
 
     .photo__text2 h4{
+        position: absolute;
         margin-left: -13vw;
-        margin-top: 73vw;
+        top: 73vw;
         font-size: 10vw;
     }
 
     .photo__text2 p {
+        position: absolute;
         margin-left: -7vw;
+        top: 100vw;
         text-align: center;
         width: 70vw;
         font-size: 5vw;
