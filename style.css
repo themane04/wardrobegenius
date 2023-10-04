@@ -409,7 +409,7 @@ body, html {
 
     .photo__text2 h4{
         position: absolute;
-        margin-left: -11vw;
+        margin-left: -12vw;
         top: 80vw;
         font-size: 10vw;
     }
@@ -432,7 +432,7 @@ body, html {
 
     .phone img, .phone {
         margin-top: 11vw;
-        margin-left: -21vw;
+        margin-left: -20vw;
         width: 80%;
         height: auto;
     }
