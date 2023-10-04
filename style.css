@@ -309,13 +309,6 @@ body, html {
     box-shadow: none;
 }
 
-@media only screen and (max-width: 1440px) {
-
-    .photo__text2 {
-        margin-top: 20vw;
-    }
-
-}
 
 /* Media Query for Mobile Screens */
 @media only screen and (max-width: 768px) {
@@ -371,6 +364,8 @@ body, html {
         display: none;
     }
 
+
+
     /* FIRSTM PAGE */
 
     .photo {
@@ -414,7 +409,7 @@ body, html {
 
     .photo__text2 h4{
         margin-left: -13vw;
-        margin-top: 65vw;
+        margin-top: 73vw;
         font-size: 10vw;
     }
 
@@ -433,10 +428,9 @@ body, html {
 
 
     .phone img, .phone {
-        position: absolute;
-        top: 28vw;
-        left: -42vw;
-        width: 65vw;
+        margin-top: 11vw;
+        margin-left: -23vw;
+        width: 85%;
         height: auto;
     }
 
@@ -449,7 +443,7 @@ body, html {
 
     .title3 {
         margin-right: -20vw;
-        padding-top: 305vw;
+        padding-top: 300vw;
     }
 
     .photo__text3 h3 {
