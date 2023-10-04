@@ -37,6 +37,27 @@ body, html {
     overflow-x: hidden;
 }
 
+#chatBalloon {
+    font-family: "Oswald m os",sans-serif;
+    position: fixed;
+    bottom: 1.5vw;
+    left: 1.5vw;
+    padding: 1.2vw;
+    background-color: rgb(232, 31, 39);
+    color: black;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    align-items: center; /* Center the items vertically */
+}
+
+.material-symbols-outlined {
+    margin-right: 0.5vw;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -237,7 +258,7 @@ body, html {
     width: 10vw;
     height: 1vw;
     margin: 1.5vw;
-    margin-left: 50vw;
+    margin-left: 80vw;
     background-color: #333;
 }
 
@@ -319,10 +340,10 @@ body, html {
     }
 
     .header__logo img {
-        margin-top: -1vw;
+        margin-top: 0;
         width: 30vw;
         height: 30vw;
-        margin-left: -99.9vw;
+        margin-left: -98.5vw;
     }
 
     .header_icons {
@@ -337,6 +358,10 @@ body, html {
         left: 50vw;
         transform: translate(-50%, 0);
         justify-content: space-between;
+    }
+
+    #chatBalloon {
+        display: none;
     }
 
     /* FIRSTM PAGE */
@@ -381,13 +406,13 @@ body, html {
     }
 
     .photo__text2 h4{
-        margin-left: -16vw;
+        margin-left: -13vw;
         margin-top: 65vw;
         font-size: 10vw;
     }
 
     .photo__text2 p {
-        margin-left: -12vw;
+        margin-left: -7vw;
         text-align: center;
         width: 70vw;
         font-size: 5vw;
@@ -399,12 +424,13 @@ body, html {
         aspect-ratio: 16 / 50;
     }
 
-    .phone img {
-        z-index: -5;
-        margin-top: 20vw;
-        margin-left: -43vw;
+
+    .phone img, .phone {
+        position: absolute;
+        top: 28vw;
+        left: -42vw;
         width: 65vw;
-        border-radius: 10%;
+        height: auto;
     }
 
     .woman, .woman img {
@@ -536,22 +562,21 @@ body, html {
 
 .phone {
     position: absolute;
-    top: 26vw;
-    left: 60vw;
+    top: 24vw;
+    left: 58vw;
     z-index: 1;
 }
 
 .phone img {
-    height: 60vh;
-    border-radius: 3vw;
+    border-radius: 50px;
 }
 
 .photo__text2 {
     font-family: "Oswald m os", sans-serif;
     position: absolute;
     font-weight: 400;
-    top: 53%;
-    left: 45%;
+    top: 55%;
+    left: 40%;
     transform: translate(-50%, -50%); /* Center the text */
     color: #fff; /* White text */
     width: 40vw;
@@ -886,7 +911,6 @@ button:hover {
         background-color: white;
         border: 1px solid black;
     }
-
 }
 
 
