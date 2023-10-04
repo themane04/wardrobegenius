@@ -368,6 +368,10 @@ body, html {
 
     /* FIRSTM PAGE */
 
+    .page2  {
+        overflow-x: hidden;
+    }
+
     .photo {
         width: 100%;
         height: auto;
