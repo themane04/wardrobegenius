@@ -84,6 +84,27 @@
     <span class="material-symbols-outlined">sms</span> Find out your style
 </div>
 
+<div id="chatBox" style="display:none;">
+    <div class="chat-header">
+        <span id="closeChat" class="close-btn2">X</span>
+        <img src="fotos/logo.png" alt="WardrobeGenius logo">
+        <div class="text-container">
+            <h3>WardrobeGenius</h3>
+            <h6 style="font-size: 11px">We’ll reply as soon as we can</h6>
+        </div>
+    </div>
+
+    <div class="chat-area">
+        <p class="system-message">Hi there 👋! Welcome to the site. Let me know if you have any questions or if you are
+            interested in answering
+            some questions and finding out your style.</p>
+    </div>
+    <div class="chat-input">
+        <input id="userMessage" placeholder="Type your message..." type="text">
+        <button id="sendMessage">Send</button>
+    </div>
+</div>
+
 <div class="contact slide-in-element">
     <h1 class="title4">Contact Us</h1>
     <p class="par2">Interested in WardrobeGenius or just have a question? Don't hesitate to reach out to us!</p>
@@ -212,6 +233,100 @@
         });
     });
 
+    // Chat Box
+    document.addEventListener("DOMContentLoaded", function () {
+        var chatBalloon = document.getElementById('chatBalloon');
+        var chatBox = document.getElementById('chatBox');
+        var sendMessage = document.getElementById('sendMessage');
+        var userMessage = document.getElementById('userMessage');
+        var chatArea = document.querySelector('.chat-area');
+
+        chatBalloon.addEventListener('click', function () {
+            chatBalloon.style.display = 'none';
+            chatBox.style.display = 'flex';
+        });
+
+        sendMessage.addEventListener('click', function () {
+            var message = userMessage.value;
+            if (message.trim() !== '') {
+                var newMessage = document.createElement('p');
+                newMessage.textContent = message;
+                newMessage.className = 'user-message';
+                chatArea.appendChild(newMessage);
+
+                var systemMessage = document.createElement('p');
+                systemMessage.textContent = 'Auto-reply: Got your message! I will get back to you as soon as I can';
+                systemMessage.className = 'system-message';
+                chatArea.appendChild(systemMessage);
+
+                userMessage.value = '';
+            }
+        });
+    });
+
+    // Close button from chat
+    document.addEventListener('DOMContentLoaded', function () {
+        const chatBox = document.getElementById('chatBox');
+        const chatBalloon = document.getElementById('chatBalloon');
+        const closeChat = document.getElementById('closeChat');
+
+        closeChat.addEventListener('click', function () {
+            chatBox.style.display = 'none';
+            chatBalloon.style.display = 'flex';
+        });
+
+        chatBalloon.addEventListener('click', function () {
+            chatBox.style.display = 'flex';
+            chatBalloon.style.display = 'none';
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const inputField = document.getElementById('userMessage');
+        const sendButton = document.getElementById('sendMessage');
+
+        // Load existing chat history from localStorage
+        const chatArea = document.querySelector('.chat_area');
+        const storedChatHistory = JSON.parse(localStorage.getItem('chatHistory') || '[]');
+        storedChatHistory.forEach((messageObj) => {
+            const newMessage = document.createElement('div');
+            newMessage.classList.add(messageObj.type);
+            newMessage.textContent = messageObj.content;
+            chatArea.appendChild(newMessage);
+        });
+
+        // Listen for 'Enter' key press
+        inputField.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+
+        // Listen for button click
+        sendButton.addEventListener('click', sendMessage);
+
+        function sendMessage() {
+            const message = inputField.value;
+            if (message) {
+                // Create a new message element
+                const newMessage = document.createElement('div');
+                newMessage.classList.add('user-message');
+                newMessage.textContent = message;
+
+                // Add the new message to the chat area
+                chatArea.appendChild(newMessage);
+
+                // Save to localStorage
+                const chatHistory = JSON.parse(localStorage.getItem('chatHistory') || '[]');
+                chatHistory.push({type: 'user-message', content: message});
+                localStorage.setItem('chatHistory', JSON.stringify(chatHistory));
+
+                // Clear the input field
+                inputField.value = '';
+            }
+        }
+    });
 
 
 </script>

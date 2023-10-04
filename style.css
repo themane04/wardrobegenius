@@ -53,6 +53,104 @@ body, html {
     align-items: center; /* Center the items vertically */
 }
 
+#chatBox {
+    font-family: "Oswald m os",sans-serif;
+    position: fixed;
+    bottom: 1.5vw;
+    left: 1.5vw;
+    width: 20vw;
+    height: 30vw;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color:black;
+    color: #fff;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.chat-header h3, h6 {
+
+}
+
+.chat-header img {
+    margin-left: 1vw;
+    margin-right: 2vw;
+    width: 48px;
+    height: 48px;
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-area {
+    flex-grow: 1;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.user-message {
+    background-color: rgb(232, 31, 39);
+    color: black;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-bottom: 5px;
+}
+
+.system-message {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 80%;
+    margin-bottom: 5px;
+}
+
+#sendMessage {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.close-btn2 {
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.2em;
+    z-index: 10000;
+}
+
+
 .material-symbols-outlined {
     margin-right: 0.5vw;
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -928,5 +1026,8 @@ button:hover {
     }
 }
 
+#userMessage {
+    color: black;
+}
 
 /* THIRD PAGE */
