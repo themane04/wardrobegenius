@@ -424,6 +424,7 @@ body, html {
     }
 
     .photo__text2 p {
+        overflow-x: hidden;
         width: 70vw;
         font-size: 5vw;
         text-align: center;
