@@ -407,9 +407,9 @@ body, html {
         width: 70vw;
     }
 
-    .photo__text2 h4{
+    .title2 {
         position: absolute;
-        margin-left: -3vw;
+        margin-left: -8vw;
         top: 80vw;
         font-size: 10vw;
     }
