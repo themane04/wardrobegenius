@@ -409,14 +409,14 @@ body, html {
 
     .photo__text2 h4{
         position: absolute;
-        margin-left: -12vw;
+        margin-left: -10vw;
         top: 80vw;
         font-size: 10vw;
     }
 
     .photo__text2 p {
         position: absolute;
-        margin-left: -7vw;
+        margin-left: -5vw;
         top: 108vw;
         text-align: center;
         width: 70vw;
