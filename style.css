@@ -879,6 +879,13 @@ body, html {
     padding-left: 10vw;
 }
 
+#thankYouMessage {
+    font-family: "Oswald m os",sans-serif;
+    margin-top: 2vw;
+    color: white;
+    font-size: 1.5vw;
+}
+
 input[type="text"],
 input[type="email"],
 textarea {

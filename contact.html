@@ -137,16 +137,16 @@
             <div id="button">
                 <button type="submit">Send</button>
             </div>
-            <div id="thankYouMessage" style="display:none;">Thanks for submitting!</div>
+            <span id="thankYouMessage" style="display:none;">Thank you for your message!</span>
         </form>
     </div>
 </div>
 
 
 <script>
-    // window.onbeforeunload = function () {
-    //    window.scrollTo(0, 0);
-    //}
+    window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+    }
 
     document.addEventListener("DOMContentLoaded", function () {
         // Email Validation
@@ -225,8 +225,8 @@
         });
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("myButton").addEventListener("click", function(event) {
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("myButton").addEventListener("click", function (event) {
             console.log("Button clicked"); // Debugging line
             event.preventDefault();
             document.getElementById("thankYouMessage").style.display = "block";
@@ -281,7 +281,7 @@
         });
     });
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const inputField = document.getElementById('userMessage');
         const sendButton = document.getElementById('sendMessage');
 
@@ -296,7 +296,7 @@
         });
 
         // Listen for 'Enter' key press
-        inputField.addEventListener('keydown', function(event) {
+        inputField.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
                 sendMessage();
@@ -327,6 +327,56 @@
             }
         }
     });
+
+    // Sending email for the form
+    document.addEventListener('DOMContentLoaded', function() {
+        const form = document.querySelector('form');
+        const sendButton = document.getElementById('button');
+        const thankYouMessage = document.getElementById('thankYouMessage');
+
+        if (sessionStorage.getItem('emailSent')) {
+            thankYouMessage.style.display = 'block';
+            sessionStorage.removeItem('emailSent');
+        }
+
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault(); // Prevent default form submission
+            sendButton.disabled = true; // Disable the button
+
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            const data = {
+                first_name,
+                last_name,
+                email,
+                message
+            };
+
+            try {
+                const response = await fetch('http://localhost:3000/sendEmail', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
+                });
+
+                if (response.ok) {
+                    sessionStorage.setItem('emailSent', 'true');
+                    location.reload(); // Refresh the page
+                } else {
+                    console.error('Error sending email');
+                }
+
+            } catch (error) {
+                console.error('There was a problem sending the email:', error);
+            }
+        });
+    });
+
 
 
 </script>
