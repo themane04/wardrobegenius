@@ -407,6 +407,13 @@ body, html {
     box-shadow: none;
 }
 
+@media only screen and (min-width: 1921px) {
+    .phone img {
+        margin-top: 5vw;
+        width: 120%;
+        height: auto;
+    }
+}
 
 /* Media Query for Mobile Screens */
 @media only screen and (max-width: 768px) {
