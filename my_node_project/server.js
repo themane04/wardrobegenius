@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: 'https://mane004.github.io/' }));
 app.use(bodyParser.json());
 
 async function sendEmail(data) {
