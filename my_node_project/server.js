@@ -21,8 +21,8 @@ async function sendEmail(data) {
 
     let mailOptions = {
         from: `"${data.first_name} ${data.last_name}" <${data.email}>`,
-        to: 'recipient@example.com',
-        subject: 'New contact form message',
+        to: 'tomevmarjan0@gmail.com',
+        subject: 'Somebody filled out the form!',
         text: `Message from ${data.first_name} ${data.last_name}: ${data.message}`,
     };
 
