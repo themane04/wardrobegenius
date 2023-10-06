@@ -40,6 +40,7 @@ app.post('/sendEmail', async (req, res) => {
     }
 });
 
-app.listen(3000, () => {
-    console.log('Server running on http://192.168.20.66:3000/sendEmail');
+app.listen(3000, '0.0.0.0', () => {
+    console.log('Server running on http://0.0.0.0:3000/');
 });
+
