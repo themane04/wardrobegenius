@@ -20,10 +20,17 @@ async function sendEmail(data) {
     });
 
     let mailOptions = {
-        from: `"${data.first_name} ${data.last_name}" <${data.email}>`,
+        from: `"${data.first_name} ${data.last_name}" <${process.env.EMAIL_USER}>`,
         to: 'tomevmarjan34@gmail.com',
         subject: 'Somebody filled out the form!',
-        text: `Message from ${data.first_name} ${data.last_name}: ${data.message}`,
+        html: `
+        <div style="font-family: sans-serif; color: #444; padding: 20px; border: 1px solid #ddd; border-radius: 5px;">
+            <h2 style="color: #FFC37B;">New Contact Form Submission</h2>
+            <p><strong>From:</strong> ${data.first_name} ${data.last_name} (${data.email})</p>
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap;">${data.message}</p>
+        </div>
+    `,
     };
 
     let info = await transporter.sendMail(mailOptions);
